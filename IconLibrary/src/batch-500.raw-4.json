@@ -1,0 +1,6 @@
+[
+["dev","battery","电池",["电量","电池状态","battery-level"]],
+["dev","hexagon","六边形",["多边形","hex","几何"]],
+["status","triangle","三角形",["警示底形","triangle-shape","几何"]],
+["status","siren-off","关闭警报",["解除警报","静音告警","alarm-off"]]
+]

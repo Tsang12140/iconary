@@ -1,0 +1,14 @@
+{
+  "name": "iconary",
+  "version": "2.3.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Iconary · 图标仓：可自托管、也可被 AI 直接调用的 SVG 图标库",
+  "scripts": {
+    "build:lib": "node IconLibrary/src/build.mjs && node IconLibrary/src/validate.mjs",
+    "build:site": "node scripts/build.mjs",
+    "build": "npm run build:lib && npm run build:site",
+    "icon": "node scripts/icon-agent.mjs",
+    "validate": "node IconLibrary/src/validate.mjs"
+  }
+}

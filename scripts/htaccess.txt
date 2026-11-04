@@ -1,0 +1,20 @@
+# Apache 用（宝塔默认是 Nginx，此文件不生效，需在站点配置里加等效规则，见 读我.md）
+Options -Indexes
+<FilesMatch "(\.env|\.throttle\.json|\.hits\.log|\.analytics\.log|\.dl\.php|\.prefs\.php|读我\.md)$">
+  Require all denied
+</FilesMatch>
+
+# 给 agent 的干净路径。目录里的 index.php 已经会转给 api.php?action=skill，
+# Apache / nginx 默认都会执行它，所以下面这条只是让 /skills/icon-library/SKILL.md 也能通。
+# 用 rewrite 而不是静态文件，域名才能跟着请求现算，换域名不用重新构建。
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^skills/icon-library/SKILL\.md$ api.php?action=skill [L,QSA]
+</IfModule>
+
+# 人完全看不到、只有 curl 看得到的一层
+<IfModule mod_headers.c>
+  <Files "index.html">
+    Header set Link '</skills/icon-library/SKILL.md>; rel="alternate"; type="text/markdown"; title="icon-library skill"'
+  </Files>
+</IfModule>

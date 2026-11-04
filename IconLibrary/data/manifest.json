@@ -1,0 +1,131 @@
+{
+  "name": "IconLibrary",
+  "version": "1.0.0",
+  "generatedAt": "2026-11-04T11:52:41.924Z",
+  "spec": {
+    "viewBox": "0 0 24 24",
+    "grid": 24,
+    "strokeWidth": 2,
+    "strokeLinecap": "round",
+    "strokeLinejoin": "round",
+    "color": "currentColor"
+  },
+  "source": {
+    "package": "lucide-static",
+    "version": "1.67.0",
+    "license": "ISC",
+    "homepage": "https://lucide.dev"
+  },
+  "counts": {
+    "total": 825,
+    "core": 192,
+    "extra": 633,
+    "categories": 13
+  },
+  "categories": [
+    {
+      "id": "base",
+      "name": "基础操作",
+      "desc": "增删改查与日常操作的原子动作",
+      "count": 80,
+      "core": 12,
+      "extra": 68
+    },
+    {
+      "id": "nav",
+      "name": "页面导航",
+      "desc": "布局、菜单、面板、方向箭头",
+      "count": 36,
+      "core": 12,
+      "extra": 24
+    },
+    {
+      "id": "social",
+      "name": "人际沟通",
+      "desc": "账号、成员、权限，以及消息邮件电话",
+      "count": 71,
+      "core": 24,
+      "extra": 47
+    },
+    {
+      "id": "ai",
+      "name": "AI 自动化",
+      "desc": "模型、机器人与自动化流程",
+      "count": 43,
+      "core": 12,
+      "extra": 31
+    },
+    {
+      "id": "data",
+      "name": "数据统计",
+      "desc": "图表、数据库与监控分析",
+      "count": 59,
+      "core": 12,
+      "extra": 47
+    },
+    {
+      "id": "commerce",
+      "name": "商业金融",
+      "desc": "购物包裹、货币支付与账目",
+      "count": 112,
+      "core": 24,
+      "extra": 88
+    },
+    {
+      "id": "files",
+      "name": "文件知识",
+      "desc": "文件、文件夹与文档资料",
+      "count": 80,
+      "core": 12,
+      "extra": 68
+    },
+    {
+      "id": "media",
+      "name": "媒体创作",
+      "desc": "图片、音视频与创作工具",
+      "count": 50,
+      "core": 12,
+      "extra": 38
+    },
+    {
+      "id": "dev",
+      "name": "开发技术",
+      "desc": "代码、版本控制与硬件设备",
+      "count": 65,
+      "core": 12,
+      "extra": 53
+    },
+    {
+      "id": "time",
+      "name": "时间任务",
+      "desc": "日期、日程、倒计时与待办",
+      "count": 36,
+      "core": 12,
+      "extra": 24
+    },
+    {
+      "id": "travel",
+      "name": "地图出行",
+      "desc": "定位、地图与交通出行",
+      "count": 40,
+      "core": 12,
+      "extra": 28
+    },
+    {
+      "id": "life",
+      "name": "生活服务",
+      "desc": "饮食、家居、天气与健康护理",
+      "count": 108,
+      "core": 24,
+      "extra": 84
+    },
+    {
+      "id": "status",
+      "name": "状态反馈",
+      "desc": "加载、提醒、情绪与结果状态",
+      "count": 45,
+      "core": 12,
+      "extra": 33
+    }
+  ]
+}

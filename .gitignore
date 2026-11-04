@@ -1,0 +1,31 @@
+# 账号与运行时数据（绝不入库）
+.env
+**/.env
+data/*.enc
+data/.hits.log
+data/.analytics.log
+data/.dl.php
+data/.prefs.php
+data/.stats.php
+data/.public.php
+data/.throttle.json
+
+# 构建产物
+dist/
+main-site-root/
+
+# 数据整理的中间文件，只保留构建需要的图标源
+data/*
+!data/icons.json
+data/*.enc
+
+# 依赖与临时文件
+node_modules/
+IconLibrary/node_modules/
+.preview/
+.screenshots/
+.workbuddy/
+_extract/
+IconLibrary/.preview/
+*.tmp
+.DS_Store

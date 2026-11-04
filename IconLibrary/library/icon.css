@@ -1,0 +1,40 @@
+/* ─────────────────────────────────────────────────────────────
+   IconLibrary · 基础样式
+   图标本身已是 currentColor + 2px 圆头描边，这里只负责尺寸与对齐。
+   用法：<svg class="il-icon">…</svg> 或 renderIcon() 的输出。
+   ───────────────────────────────────────────────────────────── */
+
+.il-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex: none;
+  vertical-align: -0.125em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  /* 小尺寸下保持清晰 */
+  shape-rendering: geometricPrecision;
+}
+
+/* 常用尺寸档位（可选） */
+.il-14 { width: 14px; height: 14px; }
+.il-16 { width: 16px; height: 16px; }
+.il-20 { width: 20px; height: 20px; }
+.il-24 { width: 24px; height: 24px; }
+.il-32 { width: 32px; height: 32px; }
+
+/* 需要“跟随按钮文字色”时无需任何额外样式，currentColor 自动生效。
+   需要固定色时直接用 color 覆盖： */
+.il-danger  { color: #d92d20; }
+.il-success { color: #12b76a; }
+.il-warning { color: #f79009; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .il-spin { animation: il-spin 0.9s linear infinite; }
+}
+@keyframes il-spin {
+  to { transform: rotate(360deg); }
+}

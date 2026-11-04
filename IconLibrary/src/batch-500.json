@@ -1,0 +1,4696 @@
+{
+ "base": [
+  {
+   "id": "align-left",
+   "name": "左对齐",
+   "keywords": [
+    "文本左对齐",
+    "排版",
+    "对齐方式",
+    "align",
+    "left",
+    "align-left"
+   ]
+  },
+  {
+   "id": "align-center",
+   "name": "居中对齐",
+   "keywords": [
+    "文本居中",
+    "排版",
+    "对齐方式",
+    "center",
+    "align-center"
+   ]
+  },
+  {
+   "id": "align-right",
+   "name": "右对齐",
+   "keywords": [
+    "文本右对齐",
+    "排版",
+    "对齐方式",
+    "right",
+    "align-right"
+   ]
+  },
+  {
+   "id": "align-justify",
+   "name": "两端对齐",
+   "keywords": [
+    "分散对齐",
+    "排版",
+    "对齐方式",
+    "justify",
+    "align-justify"
+   ]
+  },
+  {
+   "id": "indent-increase",
+   "name": "增加缩进",
+   "keywords": [
+    "缩进",
+    "层级加深",
+    "排版",
+    "indent",
+    "indent-increase"
+   ]
+  },
+  {
+   "id": "indent-decrease",
+   "name": "减少缩进",
+   "keywords": [
+    "取消缩进",
+    "层级变浅",
+    "排版",
+    "outdent",
+    "indent-decrease"
+   ]
+  },
+  {
+   "id": "bold",
+   "name": "加粗",
+   "keywords": [
+    "粗体",
+    "字重",
+    "排版",
+    "bold"
+   ]
+  },
+  {
+   "id": "italic",
+   "name": "斜体",
+   "keywords": [
+    "倾斜",
+    "字体样式",
+    "排版",
+    "italic"
+   ]
+  },
+  {
+   "id": "underline",
+   "name": "下划线",
+   "keywords": [
+    "下划线",
+    "文字装饰",
+    "排版",
+    "underline"
+   ]
+  },
+  {
+   "id": "strikethrough",
+   "name": "删除线",
+   "keywords": [
+    "划掉",
+    "文字删除",
+    "排版",
+    "strike",
+    "strikethrough"
+   ]
+  },
+  {
+   "id": "subscript",
+   "name": "下标",
+   "keywords": [
+    "角标",
+    "文字下沉",
+    "排版",
+    "subscript"
+   ]
+  },
+  {
+   "id": "superscript",
+   "name": "上标",
+   "keywords": [
+    "角标",
+    "文字上浮",
+    "排版",
+    "superscript"
+   ]
+  },
+  {
+   "id": "remove-formatting",
+   "name": "清除格式",
+   "keywords": [
+    "取消样式",
+    "还原文本",
+    "纯文本",
+    "clear",
+    "remove-formatting"
+   ]
+  },
+  {
+   "id": "heading",
+   "name": "标题",
+   "keywords": [
+    "各级标题",
+    "大纲",
+    "排版",
+    "heading"
+   ]
+  },
+  {
+   "id": "type",
+   "name": "字体",
+   "keywords": [
+    "文字",
+    "字号",
+    "输入",
+    "font",
+    "text",
+    "type"
+   ]
+  },
+  {
+   "id": "text-cursor",
+   "name": "文本光标",
+   "keywords": [
+    "输入光标",
+    "文本框",
+    "编辑",
+    "cursor",
+    "text-cursor"
+   ]
+  },
+  {
+   "id": "replace",
+   "name": "替换",
+   "keywords": [
+    "查找替换",
+    "换掉",
+    "replace"
+   ]
+  },
+  {
+   "id": "replace-all",
+   "name": "全部替换",
+   "keywords": [
+    "批量替换",
+    "整体替换",
+    "replace-all"
+   ]
+  },
+  {
+   "id": "shuffle",
+   "name": "随机打乱",
+   "keywords": [
+    "随机排序",
+    "洗牌",
+    "乱序",
+    "random",
+    "shuffle"
+   ]
+  },
+  {
+   "id": "rotate-cw",
+   "name": "顺时针旋转",
+   "keywords": [
+    "旋转",
+    "右转",
+    "角度",
+    "rotate",
+    "rotate-cw"
+   ]
+  },
+  {
+   "id": "rotate-ccw",
+   "name": "逆时针旋转",
+   "keywords": [
+    "旋转",
+    "左转",
+    "角度",
+    "undo-rotate",
+    "rotate-ccw"
+   ]
+  },
+  {
+   "id": "flip-vertical",
+   "name": "垂直翻转",
+   "keywords": [
+    "上下翻转",
+    "镜像",
+    "mirror",
+    "flip-vertical"
+   ]
+  },
+  {
+   "id": "scaling",
+   "name": "缩放",
+   "keywords": [
+    "比例",
+    "拉伸",
+    "scale",
+    "scaling"
+   ]
+  },
+  {
+   "id": "shrink",
+   "name": "缩小",
+   "keywords": [
+    "收缩",
+    "减小",
+    "collapse",
+    "shrink"
+   ]
+  },
+  {
+   "id": "pin",
+   "name": "固定",
+   "keywords": [
+    "钉住",
+    "置顶",
+    "固定位置",
+    "pin"
+   ]
+  },
+  {
+   "id": "lock",
+   "name": "锁定",
+   "keywords": [
+    "上锁",
+    "加密",
+    "lock"
+   ]
+  },
+  {
+   "id": "unlock",
+   "name": "解锁",
+   "keywords": [
+    "开锁",
+    "解除锁定",
+    "unlock"
+   ]
+  },
+  {
+   "id": "ruler",
+   "name": "尺子",
+   "keywords": [
+    "测量",
+    "尺寸",
+    "长度",
+    "measure",
+    "ruler"
+   ]
+  },
+  {
+   "id": "pencil-ruler",
+   "name": "编辑尺寸",
+   "keywords": [
+    "设计尺寸",
+    "标注",
+    "编辑",
+    "ruler-pencil",
+    "pencil-ruler"
+   ]
+  },
+  {
+   "id": "pipette",
+   "name": "取色器",
+   "keywords": [
+    "吸管",
+    "拾色",
+    "颜色吸管",
+    "eyedropper",
+    "pipette"
+   ]
+  },
+  {
+   "id": "paint-bucket",
+   "name": "填充",
+   "keywords": [
+    "油漆桶",
+    "灌色",
+    "大面积上色",
+    "fill",
+    "paint-bucket"
+   ]
+  },
+  {
+   "id": "paint-roller",
+   "name": "滚筒刷",
+   "keywords": [
+    "刷漆",
+    "滚刷",
+    "涂装",
+    "roller",
+    "paint-roller"
+   ]
+  },
+  {
+   "id": "swatch-book",
+   "name": "色卡",
+   "keywords": [
+    "色板",
+    "配色册",
+    "调色",
+    "swatches",
+    "swatch-book"
+   ]
+  },
+  {
+   "id": "stamp",
+   "name": "印章",
+   "keywords": [
+    "盖章",
+    "戳",
+    "审批",
+    "stamp"
+   ]
+  },
+  {
+   "id": "signature",
+   "name": "签名",
+   "keywords": [
+    "签字",
+    "手写签名",
+    "签署",
+    "sign",
+    "signature"
+   ]
+  },
+  {
+   "id": "pen-line",
+   "name": "钢笔线",
+   "keywords": [
+    "手写线",
+    "画线",
+    "pen",
+    "pen-line"
+   ]
+  },
+  {
+   "id": "pen-tool",
+   "name": "钢笔工具",
+   "keywords": [
+    "贝塞尔",
+    "路径绘制",
+    "矢量",
+    "bezier",
+    "pen-tool"
+   ]
+  },
+  {
+   "id": "minus",
+   "name": "减号",
+   "keywords": [
+    "减去",
+    "删除一项",
+    "负号",
+    "minus"
+   ]
+  },
+  {
+   "id": "hash",
+   "name": "井号",
+   "keywords": [
+    "标签符号",
+    "话题",
+    "编号",
+    "hashtag",
+    "hash"
+   ]
+  },
+  {
+   "id": "box-select",
+   "name": "框选",
+   "keywords": [
+    "选择区域",
+    "拉框",
+    "多选",
+    "marquee",
+    "box-select"
+   ]
+  },
+  {
+   "id": "mouse-pointer-click",
+   "name": "点击",
+   "keywords": [
+    "单击",
+    "点击操作",
+    "click",
+    "mouse-pointer-click"
+   ]
+  },
+  {
+   "id": "lasso",
+   "name": "套索",
+   "keywords": [
+    "圈选",
+    "自由选区",
+    "lasso"
+   ]
+  },
+  {
+   "id": "bring-to-front",
+   "name": "置于顶层",
+   "keywords": [
+    "上移一层",
+    "最前",
+    "图层顺序",
+    "front",
+    "bring-to-front"
+   ]
+  },
+  {
+   "id": "send-to-back",
+   "name": "置于底层",
+   "keywords": [
+    "下移一层",
+    "最后",
+    "图层顺序",
+    "back",
+    "send-to-back"
+   ]
+  },
+  {
+   "id": "star",
+   "name": "收藏",
+   "keywords": [
+    "星标",
+    "评分",
+    "常用",
+    "favorite",
+    "star"
+   ]
+  }
+ ],
+ "nav": [
+  {
+   "id": "arrow-up",
+   "name": "向上",
+   "keywords": [
+    "上移",
+    "顶部",
+    "arrow",
+    "arrow-up"
+   ]
+  },
+  {
+   "id": "arrow-down",
+   "name": "向下",
+   "keywords": [
+    "下移",
+    "底部",
+    "arrow",
+    "arrow-down"
+   ]
+  },
+  {
+   "id": "arrow-right",
+   "name": "向右",
+   "keywords": [
+    "前进",
+    "右侧",
+    "arrow",
+    "arrow-right"
+   ]
+  },
+  {
+   "id": "arrow-left-right",
+   "name": "左右切换",
+   "keywords": [
+    "横向对比",
+    "双向",
+    "swap",
+    "arrow-left-right"
+   ]
+  },
+  {
+   "id": "arrow-up-down",
+   "name": "上下切换",
+   "keywords": [
+    "纵向切换",
+    "升降",
+    "swap",
+    "arrow-up-down"
+   ]
+  },
+  {
+   "id": "corner-down-left",
+   "name": "回车",
+   "keywords": [
+    "确认输入",
+    "换行键",
+    "enter",
+    "corner-down-left"
+   ]
+  },
+  {
+   "id": "corner-up-left",
+   "name": "反向回车",
+   "keywords": [
+    "退格符号",
+    "返回",
+    "backspace",
+    "corner-up-left"
+   ]
+  },
+  {
+   "id": "chevron-up",
+   "name": "收起",
+   "keywords": [
+    "折叠",
+    "向上展开",
+    "collapse",
+    "chevron-up"
+   ]
+  },
+  {
+   "id": "chevron-first",
+   "name": "第一个",
+   "keywords": [
+    "跳到开头",
+    "首页项",
+    "first",
+    "chevron-first"
+   ]
+  },
+  {
+   "id": "chevron-last",
+   "name": "最后一个",
+   "keywords": [
+    "跳到末尾",
+    "末项",
+    "last",
+    "chevron-last"
+   ]
+  },
+  {
+   "id": "circle-arrow-up",
+   "name": "圆形向上",
+   "keywords": [
+    "圆形箭头",
+    "上移",
+    "round",
+    "circle-arrow-up"
+   ]
+  },
+  {
+   "id": "circle-arrow-down",
+   "name": "圆形向下",
+   "keywords": [
+    "圆形箭头",
+    "下移",
+    "round",
+    "circle-arrow-down"
+   ]
+  },
+  {
+   "id": "circle-arrow-left",
+   "name": "圆形向左",
+   "keywords": [
+    "圆形箭头",
+    "上一页",
+    "round",
+    "circle-arrow-left"
+   ]
+  },
+  {
+   "id": "circle-arrow-right",
+   "name": "圆形向右",
+   "keywords": [
+    "圆形箭头",
+    "下一页",
+    "round",
+    "circle-arrow-right"
+   ]
+  },
+  {
+   "id": "square-arrow-up",
+   "name": "方形向上",
+   "keywords": [
+    "方形箭头",
+    "上移",
+    "square",
+    "square-arrow-up"
+   ]
+  },
+  {
+   "id": "square-arrow-down",
+   "name": "方形向下",
+   "keywords": [
+    "方形箭头",
+    "下移",
+    "square",
+    "square-arrow-down"
+   ]
+  },
+  {
+   "id": "square-arrow-left",
+   "name": "方形向左",
+   "keywords": [
+    "方形箭头",
+    "返回",
+    "square",
+    "square-arrow-left"
+   ]
+  },
+  {
+   "id": "square-arrow-right",
+   "name": "方形向右",
+   "keywords": [
+    "方形箭头",
+    "前往",
+    "square",
+    "square-arrow-right"
+   ]
+  },
+  {
+   "id": "square-arrow-out-up-right",
+   "name": "外跳",
+   "keywords": [
+    "新窗口打开",
+    "跳出去",
+    "external",
+    "square-arrow-out-up-right"
+   ]
+  },
+  {
+   "id": "square-arrow-right-enter",
+   "name": "进入",
+   "keywords": [
+    "进门",
+    "入栈",
+    "进入容器",
+    "enter",
+    "square-arrow-right-enter"
+   ]
+  },
+  {
+   "id": "square-arrow-right-exit",
+   "name": "退出",
+   "keywords": [
+    "出门",
+    "出栈",
+    "离开容器",
+    "exit",
+    "square-arrow-right-exit"
+   ]
+  },
+  {
+   "id": "log-out",
+   "name": "登出",
+   "keywords": [
+    "退出登录",
+    "注销",
+    "sign-out",
+    "log-out"
+   ]
+  },
+  {
+   "id": "panel-left-open",
+   "name": "展开左栏",
+   "keywords": [
+    "打开侧栏",
+    "抽出面板",
+    "panel",
+    "panel-left-open"
+   ]
+  },
+  {
+   "id": "panel-left-close",
+   "name": "收起左栏",
+   "keywords": [
+    "关闭侧栏",
+    "收起面板",
+    "panel",
+    "panel-left-close"
+   ]
+  },
+  {
+   "id": "panel-right-open",
+   "name": "展开右栏",
+   "keywords": [
+    "打开右侧栏",
+    "panel",
+    "panel-right-open"
+   ]
+  },
+  {
+   "id": "panel-right-close",
+   "name": "收起右栏",
+   "keywords": [
+    "关闭右侧栏",
+    "panel",
+    "panel-right-close"
+   ]
+  },
+  {
+   "id": "panel-top-open",
+   "name": "展开顶栏",
+   "keywords": [
+    "打开顶部面板",
+    "panel",
+    "panel-top-open"
+   ]
+  },
+  {
+   "id": "panel-top-close",
+   "name": "收起顶栏",
+   "keywords": [
+    "关闭顶部面板",
+    "panel",
+    "panel-top-close"
+   ]
+  },
+  {
+   "id": "panel-bottom-open",
+   "name": "展开底栏",
+   "keywords": [
+    "打开底部面板",
+    "panel",
+    "panel-bottom-open"
+   ]
+  },
+  {
+   "id": "panel-bottom-close",
+   "name": "收起底栏",
+   "keywords": [
+    "关闭底部面板",
+    "panel",
+    "panel-bottom-close"
+   ]
+  },
+  {
+   "id": "sidebar-open",
+   "name": "侧栏展开",
+   "keywords": [
+    "抽屉打开",
+    "sidebar",
+    "sidebar-open"
+   ]
+  },
+  {
+   "id": "sidebar-close",
+   "name": "侧栏收起",
+   "keywords": [
+    "抽屉关闭",
+    "sidebar",
+    "sidebar-close"
+   ]
+  },
+  {
+   "id": "panels-top-left",
+   "name": "左上分栏",
+   "keywords": [
+    "左上加主区",
+    "layout",
+    "panels-top-left"
+   ]
+  },
+  {
+   "id": "panels-top-bottom",
+   "name": "上下分栏",
+   "keywords": [
+    "上下两段",
+    "layout",
+    "panels-top-bottom"
+   ]
+  },
+  {
+   "id": "layout",
+   "name": "布局",
+   "keywords": [
+    "版式",
+    "框架",
+    "layout"
+   ]
+  },
+  {
+   "id": "layout-panel-left",
+   "name": "左栏布局",
+   "keywords": [
+    "左侧导航布局",
+    "layout",
+    "layout-panel-left"
+   ]
+  },
+  {
+   "id": "grid-3x3",
+   "name": "九宫格",
+   "keywords": [
+    "3x3 网格",
+    "宫格",
+    "grid",
+    "grid-3x3"
+   ]
+  },
+  {
+   "id": "list-ordered",
+   "name": "有序列表",
+   "keywords": [
+    "编号列表",
+    "序号",
+    "ordered",
+    "list-ordered"
+   ]
+  },
+  {
+   "id": "list-filter",
+   "name": "列表筛选",
+   "keywords": [
+    "过滤列表",
+    "条件筛选",
+    "filter",
+    "list-filter"
+   ]
+  },
+  {
+   "id": "list-collapse",
+   "name": "列表收起",
+   "keywords": [
+    "折叠列表",
+    "collapse",
+    "list-collapse"
+   ]
+  },
+  {
+   "id": "list-sort-ascending",
+   "name": "升序",
+   "keywords": [
+    "正序",
+    "从小到大",
+    "asc",
+    "list-sort-ascending"
+   ]
+  },
+  {
+   "id": "list-sort-descending",
+   "name": "降序",
+   "keywords": [
+    "倒序",
+    "从大到小",
+    "desc",
+    "list-sort-descending"
+   ]
+  },
+  {
+   "id": "separator-horizontal",
+   "name": "横向分隔线",
+   "keywords": [
+    "分割线",
+    "水平线",
+    "divider",
+    "separator-horizontal"
+   ]
+  },
+  {
+   "id": "separator-vertical",
+   "name": "纵向分隔线",
+   "keywords": [
+    "竖线",
+    "垂直分割",
+    "divider",
+    "separator-vertical"
+   ]
+  }
+ ],
+ "social": [
+  {
+   "id": "user-minus",
+   "name": "移除用户",
+   "keywords": [
+    "减少成员",
+    "踢人",
+    "user-remove",
+    "user-minus"
+   ]
+  },
+  {
+   "id": "user-x",
+   "name": "删除用户",
+   "keywords": [
+    "删号",
+    "移除账号",
+    "user-delete",
+    "user-x"
+   ]
+  },
+  {
+   "id": "user-check-2",
+   "name": "用户认证",
+   "keywords": [
+    "实名认证",
+    "已验证",
+    "verified",
+    "user-check-2"
+   ]
+  },
+  {
+   "id": "user-cog-2",
+   "name": "用户设置",
+   "keywords": [
+    "账号偏好",
+    "个人设置",
+    "user-settings",
+    "user-cog-2"
+   ]
+  },
+  {
+   "id": "user-key",
+   "name": "用户密钥",
+   "keywords": [
+    "账号密钥",
+    "凭证",
+    "user-key"
+   ]
+  },
+  {
+   "id": "user-lock",
+   "name": "用户锁定",
+   "keywords": [
+    "冻结账号",
+    "锁定用户",
+    "user-lock"
+   ]
+  },
+  {
+   "id": "user-pen",
+   "name": "编辑用户",
+   "keywords": [
+    "改资料",
+    "编辑档案",
+    "user-edit",
+    "user-pen"
+   ]
+  },
+  {
+   "id": "user-search",
+   "name": "搜索用户",
+   "keywords": [
+    "找人",
+    "查用户",
+    "user-search"
+   ]
+  },
+  {
+   "id": "user-shield",
+   "name": "用户保护",
+   "keywords": [
+    "账号安全",
+    "隐私保护",
+    "user-shield"
+   ]
+  },
+  {
+   "id": "user-star",
+   "name": "用户星标",
+   "keywords": [
+    "重点用户",
+    "常客",
+    "vip",
+    "user-star"
+   ]
+  },
+  {
+   "id": "user-group",
+   "name": "用户分组",
+   "keywords": [
+    "分群",
+    "标签组",
+    "user-group"
+   ]
+  },
+  {
+   "id": "user-round-check",
+   "name": "成员认证",
+   "keywords": [
+    "成员已认证",
+    "member-verified",
+    "user-round-check"
+   ]
+  },
+  {
+   "id": "user-round-cog",
+   "name": "成员设置",
+   "keywords": [
+    "成员管理",
+    "member-settings",
+    "user-round-cog"
+   ]
+  },
+  {
+   "id": "user-round-shield",
+   "name": "成员保护",
+   "keywords": [
+    "成员安全",
+    "member-shield",
+    "user-round-shield"
+   ]
+  },
+  {
+   "id": "user-square",
+   "name": "用户卡片",
+   "keywords": [
+    "名片",
+    "用户资料卡",
+    "profile",
+    "user-square"
+   ]
+  },
+  {
+   "id": "users-collaboration",
+   "name": "团队协作",
+   "keywords": [
+    "协同",
+    "共同编辑",
+    "collab",
+    "users-collaboration"
+   ]
+  },
+  {
+   "id": "speech",
+   "name": "演讲",
+   "keywords": [
+    "发言",
+    "讲话",
+    "speech"
+   ]
+  },
+  {
+   "id": "quote",
+   "name": "引用",
+   "keywords": [
+    "引述",
+    "摘录",
+    "quote"
+   ]
+  },
+  {
+   "id": "reply",
+   "name": "回复",
+   "keywords": [
+    "回信",
+    "答复",
+    "reply"
+   ]
+  },
+  {
+   "id": "reply-all",
+   "name": "全部回复",
+   "keywords": [
+    "回复所有人",
+    "reply-all",
+    "全部回复"
+   ]
+  },
+  {
+   "id": "forward",
+   "name": "转发",
+   "keywords": [
+    "转寄",
+    "分享出去",
+    "forward"
+   ]
+  },
+  {
+   "id": "send-horizontal",
+   "name": "发送",
+   "keywords": [
+    "寄出",
+    "提交消息",
+    "send",
+    "send-horizontal"
+   ]
+  },
+  {
+   "id": "mail-badge",
+   "name": "邮件徽章",
+   "keywords": [
+    "邮件标记",
+    "mail-badge",
+    "邮件徽章"
+   ]
+  },
+  {
+   "id": "mail-dot",
+   "name": "未读邮件",
+   "keywords": [
+    "新邮件红点",
+    "未读",
+    "unread",
+    "mail-dot"
+   ]
+  },
+  {
+   "id": "mail-pen",
+   "name": "草拟邮件",
+   "keywords": [
+    "写信",
+    "草稿",
+    "draft",
+    "mail-pen"
+   ]
+  },
+  {
+   "id": "mail-question",
+   "name": "邮件疑问",
+   "keywords": [
+    "邮件待确认",
+    "mail-help",
+    "mail-question"
+   ]
+  },
+  {
+   "id": "inbox",
+   "name": "收件箱",
+   "keywords": [
+    "信箱",
+    "来信",
+    "inbox"
+   ]
+  },
+  {
+   "id": "voicemail",
+   "name": "语音留言",
+   "keywords": [
+    "语音信箱",
+    "留言",
+    "voicemail"
+   ]
+  },
+  {
+   "id": "phone-call",
+   "name": "通话中",
+   "keywords": [
+    "正在通话",
+    "打电话",
+    "calling",
+    "phone-call"
+   ]
+  },
+  {
+   "id": "phone-off",
+   "name": "挂断",
+   "keywords": [
+    "拒接",
+    "停止通话",
+    "hangup",
+    "phone-off"
+   ]
+  },
+  {
+   "id": "phone-forwarded",
+   "name": "呼叫转移",
+   "keywords": [
+    "转接电话",
+    "forwarded",
+    "phone-forwarded"
+   ]
+  },
+  {
+   "id": "phone-log",
+   "name": "通话记录",
+   "keywords": [
+    "话单",
+    "通话历史",
+    "call-log",
+    "phone-log"
+   ]
+  },
+  {
+   "id": "phone-outgoing",
+   "name": "呼出",
+   "keywords": [
+    "打出电话",
+    "outgoing",
+    "phone-outgoing"
+   ]
+  },
+  {
+   "id": "megaphone",
+   "name": "公告",
+   "keywords": [
+    "喇叭",
+    "广播",
+    "announce",
+    "megaphone"
+   ]
+  },
+  {
+   "id": "podcast",
+   "name": "播客",
+   "keywords": [
+    "电台节目",
+    "podcast",
+    "播客"
+   ]
+  },
+  {
+   "id": "rss",
+   "name": "订阅",
+   "keywords": [
+    "订阅源",
+    "feeds",
+    "rss"
+   ]
+  },
+  {
+   "id": "message-circle-reply",
+   "name": "回复消息",
+   "keywords": [
+    "回消息",
+    "quote-reply",
+    "message-circle-reply"
+   ]
+  },
+  {
+   "id": "message-circle-warning",
+   "name": "消息警告",
+   "keywords": [
+    "消息异常",
+    "warning",
+    "message-circle-warning"
+   ]
+  },
+  {
+   "id": "message-square-reply",
+   "name": "回复对话",
+   "keywords": [
+    "对话回复",
+    "thread-reply",
+    "message-square-reply"
+   ]
+  },
+  {
+   "id": "star-half",
+   "name": "半星评分",
+   "keywords": [
+    "评分",
+    "三星半",
+    "rating",
+    "star-half"
+   ]
+  }
+ ],
+ "ai": [
+  {
+   "id": "robot-arm",
+   "name": "机械臂",
+   "keywords": [
+    "自动化机械",
+    "产线机器人",
+    "robot-arm"
+   ]
+  },
+  {
+   "id": "robot-vacuum",
+   "name": "扫地机器人",
+   "keywords": [
+    "清洁机器人",
+    "vacuum",
+    "robot-vacuum"
+   ]
+  },
+  {
+   "id": "wand",
+   "name": "魔杖",
+   "keywords": [
+    "一键生成",
+    "魔法",
+    "magic",
+    "wand"
+   ]
+  },
+  {
+   "id": "telescope",
+   "name": "望远镜",
+   "keywords": [
+    "观察远物",
+    "预测",
+    "telescope"
+   ]
+  },
+  {
+   "id": "radar",
+   "name": "雷达",
+   "keywords": [
+    "探测",
+    "扫描范围",
+    "radar"
+   ]
+  },
+  {
+   "id": "satellite",
+   "name": "卫星",
+   "keywords": [
+    "天上节点",
+    "卫星通信",
+    "satellite"
+   ]
+  },
+  {
+   "id": "satellite-dish",
+   "name": "卫星天线",
+   "keywords": [
+    "接收信号",
+    "锅盖天线",
+    "dish",
+    "satellite-dish"
+   ]
+  },
+  {
+   "id": "antenna",
+   "name": "天线",
+   "keywords": [
+    "信号发射",
+    "broadcast",
+    "antenna"
+   ]
+  },
+  {
+   "id": "scan-search",
+   "name": "扫描搜索",
+   "keywords": [
+    "识别并搜索",
+    "scan-search",
+    "扫描搜索"
+   ]
+  },
+  {
+   "id": "scan-line",
+   "name": "扫描线",
+   "keywords": [
+    "逐行扫描",
+    "scan",
+    "scan-line"
+   ]
+  },
+  {
+   "id": "scan-box",
+   "name": "扫描框",
+   "keywords": [
+    "取景框",
+    "扫描区域",
+    "scan-box"
+   ]
+  },
+  {
+   "id": "scan-qr-code",
+   "name": "扫码",
+   "keywords": [
+    "二维码扫描",
+    "扫码识别",
+    "qr-scan",
+    "scan-qr-code"
+   ]
+  },
+  {
+   "id": "audio-waveform",
+   "name": "声波",
+   "keywords": [
+    "音频波形",
+    "声音",
+    "waveform",
+    "audio-waveform"
+   ]
+  },
+  {
+   "id": "mic-signal",
+   "name": "麦克风信号",
+   "keywords": [
+    "收音中",
+    "语音输入",
+    "mic-signal"
+   ]
+  },
+  {
+   "id": "mic-audio-lines",
+   "name": "语音线条",
+   "keywords": [
+    "语音识别",
+    "语音转文字",
+    "asr",
+    "mic-audio-lines"
+   ]
+  },
+  {
+   "id": "zap",
+   "name": "闪电",
+   "keywords": [
+    "能量",
+    "快速",
+    "lightning",
+    "zap"
+   ]
+  },
+  {
+   "id": "bolt",
+   "name": "螺栓",
+   "keywords": [
+    "紧固",
+    "电量",
+    "bolt"
+   ]
+  },
+  {
+   "id": "waypoints",
+   "name": "路点",
+   "keywords": [
+    "路径节点",
+    "中转点",
+    "waypoint",
+    "waypoints"
+   ]
+  },
+  {
+   "id": "graph-hub",
+   "name": "中枢图",
+   "keywords": [
+    "中心节点",
+    "拓扑",
+    "hub",
+    "graph-hub"
+   ]
+  },
+  {
+   "id": "graph-star",
+   "name": "星型图",
+   "keywords": [
+    "星型拓扑",
+    "辐射结构",
+    "star-graph",
+    "graph-star"
+   ]
+  },
+  {
+   "id": "variable",
+   "name": "变量",
+   "keywords": [
+    "可变参数",
+    "占位符",
+    "variable"
+   ]
+  },
+  {
+   "id": "pi",
+   "name": "圆周率",
+   "keywords": [
+    "π",
+    "数学常量",
+    "pi"
+   ]
+  },
+  {
+   "id": "omega",
+   "name": "欧米伽",
+   "keywords": [
+    "Ω",
+    "结尾",
+    "omega"
+   ]
+  },
+  {
+   "id": "regex",
+   "name": "正则",
+   "keywords": [
+    "正则表达式",
+    "匹配规则",
+    "regex"
+   ]
+  },
+  {
+   "id": "diff",
+   "name": "差异",
+   "keywords": [
+    "对比差异",
+    "变更",
+    "diff"
+   ]
+  },
+  {
+   "id": "boxes-linked",
+   "name": "关联盒子",
+   "keywords": [
+    "模块关联",
+    "组件连接",
+    "linked",
+    "boxes-linked"
+   ]
+  },
+  {
+   "id": "puzzle",
+   "name": "拼图",
+   "keywords": [
+    "集成",
+    "插件",
+    "puzzle"
+   ]
+  },
+  {
+   "id": "torus",
+   "name": "环面",
+   "keywords": [
+    "环形拓扑",
+    "三维环",
+    "torus"
+   ]
+  }
+ ],
+ "data": [
+  {
+   "id": "bar-chart-big",
+   "name": "大条形图",
+   "keywords": [
+    "横向柱图",
+    "放大的条形图",
+    "bar-big",
+    "bar-chart-big"
+   ]
+  },
+  {
+   "id": "chart-column-big",
+   "name": "大柱状图",
+   "keywords": [
+    "放大柱图",
+    "column-big",
+    "chart-column-big"
+   ]
+  },
+  {
+   "id": "chart-no-axes-column-increasing",
+   "name": "递增柱图",
+   "keywords": [
+    "无坐标轴递增",
+    "增长柱",
+    "increasing",
+    "chart-no-axes-column-increasing"
+   ]
+  },
+  {
+   "id": "chart-no-axes-column-decreasing",
+   "name": "递减柱图",
+   "keywords": [
+    "无坐标轴递减",
+    "下降柱",
+    "decreasing",
+    "chart-no-axes-column-decreasing"
+   ]
+  },
+  {
+   "id": "gantt-chart",
+   "name": "甘特图",
+   "keywords": [
+    "项目排期",
+    "进度图",
+    "gantt",
+    "gantt-chart"
+   ]
+  },
+  {
+   "id": "activity-square",
+   "name": "活跃度方块",
+   "keywords": [
+    "活跃方形",
+    "activity",
+    "activity-square"
+   ]
+  },
+  {
+   "id": "monitor-activity",
+   "name": "监控活跃度",
+   "keywords": [
+    "实时监控",
+    "指标波动",
+    "monitor",
+    "monitor-activity"
+   ]
+  },
+  {
+   "id": "trending-up-down",
+   "name": "涨跌",
+   "keywords": [
+    "涨跌走势",
+    "波动",
+    "updown",
+    "trending-up-down"
+   ]
+  },
+  {
+   "id": "database-arrow-down",
+   "name": "数据迁入",
+   "keywords": [
+    "导入数据",
+    "入库",
+    "db-in",
+    "database-arrow-down"
+   ]
+  },
+  {
+   "id": "database-arrow-up",
+   "name": "数据迁出",
+   "keywords": [
+    "导出数据",
+    "出库",
+    "db-out",
+    "database-arrow-up"
+   ]
+  },
+  {
+   "id": "database-backup",
+   "name": "数据备份",
+   "keywords": [
+    "备份库",
+    "dump",
+    "database-backup"
+   ]
+  },
+  {
+   "id": "database-search",
+   "name": "数据检索",
+   "keywords": [
+    "查库",
+    "检索数据",
+    "db-search",
+    "database-search"
+   ]
+  },
+  {
+   "id": "database-x",
+   "name": "数据删除",
+   "keywords": [
+    "删库",
+    "清空数据",
+    "db-delete",
+    "database-x"
+   ]
+  },
+  {
+   "id": "table",
+   "name": "数据表",
+   "keywords": [
+    "表格",
+    "table",
+    "数据表"
+   ]
+  },
+  {
+   "id": "table-config",
+   "name": "表格配置",
+   "keywords": [
+    "表格设置",
+    "列配置",
+    "table-cog",
+    "table-config"
+   ]
+  },
+  {
+   "id": "table-properties",
+   "name": "表格属性",
+   "keywords": [
+    "属性面板",
+    "table-props",
+    "table-properties"
+   ]
+  },
+  {
+   "id": "table-cells-merge",
+   "name": "合并单元格",
+   "keywords": [
+    "单元格合并",
+    "merge-cells",
+    "table-cells-merge"
+   ]
+  },
+  {
+   "id": "table-cells-split",
+   "name": "拆分单元格",
+   "keywords": [
+    "单元格拆分",
+    "split-cells",
+    "table-cells-split"
+   ]
+  },
+  {
+   "id": "table-columns-split",
+   "name": "拆分列",
+   "keywords": [
+    "按列拆分",
+    "split-columns",
+    "table-columns-split"
+   ]
+  },
+  {
+   "id": "table-rows-split",
+   "name": "拆分行",
+   "keywords": [
+    "按行拆分",
+    "split-rows",
+    "table-rows-split"
+   ]
+  },
+  {
+   "id": "tally-2",
+   "name": "计数二",
+   "keywords": [
+    "正字计数",
+    "两个",
+    "tally-2"
+   ]
+  },
+  {
+   "id": "tally-3",
+   "name": "计数三",
+   "keywords": [
+    "正字计数",
+    "三个",
+    "tally-3"
+   ]
+  },
+  {
+   "id": "tally-5",
+   "name": "计数五",
+   "keywords": [
+    "正字计数",
+    "五个",
+    "tally-5"
+   ]
+  },
+  {
+   "id": "numbers",
+   "name": "数字",
+   "keywords": [
+    "数值",
+    "编号",
+    "numbers"
+   ]
+  },
+  {
+   "id": "decimals-arrow-left",
+   "name": "小数位左移",
+   "keywords": [
+    "精度减少",
+    "decimals",
+    "decimals-arrow-left"
+   ]
+  },
+  {
+   "id": "decimals-arrow-right",
+   "name": "小数位右移",
+   "keywords": [
+    "精度增加",
+    "decimals",
+    "decimals-arrow-right"
+   ]
+  },
+  {
+   "id": "sigma-square",
+   "name": "求和方框",
+   "keywords": [
+    "求和",
+    "方框 ∑",
+    "sum",
+    "sigma-square"
+   ]
+  },
+  {
+   "id": "square-sigma",
+   "name": "方形求和",
+   "keywords": [
+    "合计",
+    "square-sigma",
+    "方形求和"
+   ]
+  },
+  {
+   "id": "square-pi",
+   "name": "方形圆周率",
+   "keywords": [
+    "统计常量",
+    "square-pi",
+    "方形圆周率"
+   ]
+  },
+  {
+   "id": "square-radical",
+   "name": "方形根号",
+   "keywords": [
+    "开方",
+    "square-root",
+    "square-radical"
+   ]
+  },
+  {
+   "id": "radical",
+   "name": "根号",
+   "keywords": [
+    "开方",
+    "平方根",
+    "sqrt",
+    "radical"
+   ]
+  },
+  {
+   "id": "ratio",
+   "name": "比例",
+   "keywords": [
+    "占比",
+    "比率",
+    "ratio"
+   ]
+  },
+  {
+   "id": "proportions",
+   "name": "尺寸比例",
+   "keywords": [
+    "比例尺",
+    "proportion",
+    "proportions"
+   ]
+  },
+  {
+   "id": "axis-3d",
+   "name": "三维坐标轴",
+   "keywords": [
+    "三维分析",
+    "axis",
+    "axis-3d"
+   ]
+  },
+  {
+   "id": "diameter",
+   "name": "直径",
+   "keywords": [
+    "圆直径",
+    "diameter",
+    "直径"
+   ]
+  },
+  {
+   "id": "angle",
+   "name": "角度",
+   "keywords": [
+    "夹角",
+    "angle",
+    "角度"
+   ]
+  },
+  {
+   "id": "crosshair",
+   "name": "准星",
+   "keywords": [
+    "精准定位",
+    "瞄准",
+    "crosshair"
+   ]
+  },
+  {
+   "id": "inspect",
+   "name": "检查",
+   "keywords": [
+    "审查",
+    "审阅",
+    "inspect"
+   ]
+  }
+ ],
+ "commerce": [
+  {
+   "id": "ticket",
+   "name": "票券",
+   "keywords": [
+    "门票",
+    "券",
+    "ticket"
+   ]
+  },
+  {
+   "id": "ticket-check",
+   "name": "票券核销",
+   "keywords": [
+    "验券",
+    "已使用",
+    "redeem",
+    "ticket-check"
+   ]
+  },
+  {
+   "id": "ticket-plus",
+   "name": "新增票券",
+   "keywords": [
+    "发票券",
+    "ticket-add",
+    "ticket-plus"
+   ]
+  },
+  {
+   "id": "ticket-x",
+   "name": "票券作废",
+   "keywords": [
+    "作废券",
+    "ticket-void",
+    "ticket-x"
+   ]
+  },
+  {
+   "id": "tickets",
+   "name": "多张票",
+   "keywords": [
+    "票务",
+    "tickets",
+    "多张票"
+   ]
+  },
+  {
+   "id": "tickets-plane",
+   "name": "机票",
+   "keywords": [
+    "航班票",
+    "air-ticket",
+    "tickets-plane"
+   ]
+  },
+  {
+   "id": "tag",
+   "name": "标签",
+   "keywords": [
+    "价签",
+    "吊牌",
+    "tag"
+   ]
+  },
+  {
+   "id": "tag-plus",
+   "name": "新增标签",
+   "keywords": [
+    "加标签",
+    "tag-add",
+    "tag-plus"
+   ]
+  },
+  {
+   "id": "tag-x",
+   "name": "移除标签",
+   "keywords": [
+    "删标签",
+    "tag-remove",
+    "tag-x"
+   ]
+  },
+  {
+   "id": "shopping-cart-plus",
+   "name": "加入购物车",
+   "keywords": [
+    "加购",
+    "cart-add",
+    "shopping-cart-plus"
+   ]
+  },
+  {
+   "id": "shopping-cart-minus",
+   "name": "移出购物车",
+   "keywords": [
+    "减购",
+    "cart-remove",
+    "shopping-cart-minus"
+   ]
+  },
+  {
+   "id": "wallet-2",
+   "name": "钱包",
+   "keywords": [
+    "钱夹",
+    "wallet",
+    "wallet-2"
+   ]
+  },
+  {
+   "id": "wallet-minimal",
+   "name": "轻钱包",
+   "keywords": [
+    "简约钱包",
+    "wallet-min",
+    "wallet-minimal"
+   ]
+  },
+  {
+   "id": "badge-dollar-sign",
+   "name": "美元徽章",
+   "keywords": [
+    "美元标记",
+    "usd-badge",
+    "badge-dollar-sign"
+   ]
+  },
+  {
+   "id": "badge-euro",
+   "name": "欧元徽章",
+   "keywords": [
+    "欧元标记",
+    "eur-badge",
+    "badge-euro"
+   ]
+  },
+  {
+   "id": "badge-pound-sterling",
+   "name": "英镑徽章",
+   "keywords": [
+    "英镑标记",
+    "gbp-badge",
+    "badge-pound-sterling"
+   ]
+  },
+  {
+   "id": "badge-russian-ruble",
+   "name": "卢布徽章",
+   "keywords": [
+    "卢布标记",
+    "rub-badge",
+    "badge-russian-ruble"
+   ]
+  },
+  {
+   "id": "badge-swiss-franc",
+   "name": "瑞郎徽章",
+   "keywords": [
+    "瑞郎标记",
+    "chf-badge",
+    "badge-swiss-franc"
+   ]
+  },
+  {
+   "id": "badge-japanese-yen",
+   "name": "日元徽章",
+   "keywords": [
+    "日元标记",
+    "jpy-badge",
+    "badge-japanese-yen"
+   ]
+  },
+  {
+   "id": "badge-indian-rupee",
+   "name": "卢比徽章",
+   "keywords": [
+    "卢比标记",
+    "inr-badge",
+    "badge-indian-rupee"
+   ]
+  },
+  {
+   "id": "banknote-check",
+   "name": "钞票核验",
+   "keywords": [
+    "验钞",
+    "真伪校验",
+    "banknote-check"
+   ]
+  },
+  {
+   "id": "bitcoin",
+   "name": "比特币",
+   "keywords": [
+    "加密货币",
+    "btc",
+    "bitcoin"
+   ]
+  },
+  {
+   "id": "pound-sterling",
+   "name": "英镑",
+   "keywords": [
+    "£",
+    "gbp",
+    "pound-sterling"
+   ]
+  },
+  {
+   "id": "russian-ruble",
+   "name": "卢布",
+   "keywords": [
+    "₽",
+    "rub",
+    "russian-ruble"
+   ]
+  },
+  {
+   "id": "swiss-franc",
+   "name": "瑞士法郎",
+   "keywords": [
+    "chf",
+    "franc",
+    "swiss-franc"
+   ]
+  },
+  {
+   "id": "saudi-riyal",
+   "name": "沙特里亚尔",
+   "keywords": [
+    "sar",
+    "riyal",
+    "saudi-riyal"
+   ]
+  },
+  {
+   "id": "warehouse",
+   "name": "仓库",
+   "keywords": [
+    "库房",
+    "仓储",
+    "warehouse"
+   ]
+  },
+  {
+   "id": "factory",
+   "name": "工厂",
+   "keywords": [
+    "产线",
+    "制造",
+    "factory"
+   ]
+  },
+  {
+   "id": "truck-electric",
+   "name": "电动货车",
+   "keywords": [
+    "新能源物流",
+    "ev-truck",
+    "truck-electric"
+   ]
+  },
+  {
+   "id": "van",
+   "name": "厢式货车",
+   "keywords": [
+    "小货车",
+    "货运车",
+    "van"
+   ]
+  },
+  {
+   "id": "trailer",
+   "name": "挂车",
+   "keywords": [
+    "拖车",
+    "半挂",
+    "trailer"
+   ]
+  },
+  {
+   "id": "briefcase-conveyor-belt",
+   "name": "传送带",
+   "keywords": [
+    "流水线",
+    "分拣",
+    "conveyor",
+    "briefcase-conveyor-belt"
+   ]
+  },
+  {
+   "id": "certificate",
+   "name": "证书",
+   "keywords": [
+    "资质",
+    "认证证书",
+    "certificate"
+   ]
+  },
+  {
+   "id": "gavel",
+   "name": "法槌",
+   "keywords": [
+    "拍卖",
+    "裁决",
+    "合规",
+    "auction",
+    "gavel"
+   ]
+  },
+  {
+   "id": "scale",
+   "name": "天平",
+   "keywords": [
+    "权衡",
+    "公平",
+    "计量",
+    "balance",
+    "scale"
+   ]
+  },
+  {
+   "id": "gem",
+   "name": "宝石",
+   "keywords": [
+    "钻石",
+    "贵重",
+    "gem"
+   ]
+  },
+  {
+   "id": "diamond",
+   "name": "菱形宝石",
+   "keywords": [
+    "钻石",
+    "diamond",
+    "菱形宝石"
+   ]
+  },
+  {
+   "id": "badge-help",
+   "name": "徽章帮助",
+   "keywords": [
+    "标记疑问",
+    "badge-help",
+    "徽章帮助"
+   ]
+  },
+  {
+   "id": "badge-minus",
+   "name": "徽章减少",
+   "keywords": [
+    "降级标记",
+    "badge-minus",
+    "徽章减少"
+   ]
+  },
+  {
+   "id": "receipt-euro",
+   "name": "欧元小票",
+   "keywords": [
+    "欧元票据",
+    "eur-receipt",
+    "receipt-euro"
+   ]
+  },
+  {
+   "id": "receipt-japanese-yen",
+   "name": "日元小票",
+   "keywords": [
+    "日元票据",
+    "jpy-receipt",
+    "receipt-japanese-yen"
+   ]
+  },
+  {
+   "id": "circle-pound-sterling",
+   "name": "英镑圆标",
+   "keywords": [
+    "英镑圆形标记",
+    "gbp-circle",
+    "circle-pound-sterling"
+   ]
+  },
+  {
+   "id": "badge-question-mark",
+   "name": "徽章问号",
+   "keywords": [
+    "待确认标记",
+    "badge-question",
+    "badge-question-mark"
+   ]
+  },
+  {
+   "id": "vote",
+   "name": "投票",
+   "keywords": [
+    "表决",
+    "选举",
+    "vote"
+   ]
+  },
+  {
+   "id": "diamond-plus",
+   "name": "宝石新增",
+   "keywords": [
+    "钻石加成",
+    "vip 提升",
+    "diamond-plus"
+   ]
+  },
+  {
+   "id": "diamond-minus",
+   "name": "宝石减少",
+   "keywords": [
+    "降级",
+    "diamond-minus",
+    "宝石减少"
+   ]
+  }
+ ],
+ "files": [
+  {
+   "id": "file-archive",
+   "name": "压缩包",
+   "keywords": [
+    "zip 文件",
+    "归档文件",
+    "archive-file",
+    "file-archive"
+   ]
+  },
+  {
+   "id": "file-audio",
+   "name": "音频文件",
+   "keywords": [
+    "声音文件",
+    "mp3",
+    "audio-file",
+    "file-audio"
+   ]
+  },
+  {
+   "id": "file-video",
+   "name": "视频文件",
+   "keywords": [
+    "影片文件",
+    "mp4",
+    "video-file",
+    "file-video"
+   ]
+  },
+  {
+   "id": "file-music",
+   "name": "音乐文件",
+   "keywords": [
+    "乐曲文件",
+    "music-file",
+    "file-music"
+   ]
+  },
+  {
+   "id": "file-database",
+   "name": "数据文件",
+   "keywords": [
+    "库文件",
+    "db-file",
+    "file-database"
+   ]
+  },
+  {
+   "id": "file-diff",
+   "name": "差异文件",
+   "keywords": [
+    "改动记录",
+    "patch",
+    "diff-file",
+    "file-diff"
+   ]
+  },
+  {
+   "id": "file-down",
+   "name": "下载文件",
+   "keywords": [
+    "拉取文件",
+    "file-download",
+    "file-down"
+   ]
+  },
+  {
+   "id": "file-up",
+   "name": "上传文件",
+   "keywords": [
+    "提交文件",
+    "file-upload",
+    "file-up"
+   ]
+  },
+  {
+   "id": "file-edit",
+   "name": "编辑文件",
+   "keywords": [
+    "改文件",
+    "file-edit",
+    "编辑文件"
+   ]
+  },
+  {
+   "id": "file-pen",
+   "name": "签署文件",
+   "keywords": [
+    "文件签名",
+    "file-sign",
+    "file-pen"
+   ]
+  },
+  {
+   "id": "file-input",
+   "name": "导入文件",
+   "keywords": [
+    "文件进入",
+    "file-in",
+    "file-input"
+   ]
+  },
+  {
+   "id": "file-output",
+   "name": "导出文件",
+   "keywords": [
+    "文件输出",
+    "file-out",
+    "file-output"
+   ]
+  },
+  {
+   "id": "file-user",
+   "name": "用户文件",
+   "keywords": [
+    "个人文件",
+    "file-user",
+    "用户文件"
+   ]
+  },
+  {
+   "id": "file-type",
+   "name": "文件类型",
+   "keywords": [
+    "格式",
+    "后缀",
+    "file-type"
+   ]
+  },
+  {
+   "id": "file-terminal",
+   "name": "终端文件",
+   "keywords": [
+    "脚本文件",
+    "file-term",
+    "file-terminal"
+   ]
+  },
+  {
+   "id": "file-sliders",
+   "name": "文件参数",
+   "keywords": [
+    "文件设置",
+    "file-config",
+    "file-sliders"
+   ]
+  },
+  {
+   "id": "file-warning",
+   "name": "文件警告",
+   "keywords": [
+    "文件异常",
+    "file-warn",
+    "file-warning"
+   ]
+  },
+  {
+   "id": "file-question",
+   "name": "文件疑问",
+   "keywords": [
+    "待确认文件",
+    "file-help",
+    "file-question"
+   ]
+  },
+  {
+   "id": "file-cog",
+   "name": "文件设置",
+   "keywords": [
+    "文件属性",
+    "file-settings",
+    "file-cog"
+   ]
+  },
+  {
+   "id": "file-chart-line",
+   "name": "折线图文件",
+   "keywords": [
+    "趋势报告文件",
+    "file-chart",
+    "file-chart-line"
+   ]
+  },
+  {
+   "id": "file-chart-pie",
+   "name": "饼图文件",
+   "keywords": [
+    "占比报告文件",
+    "file-pie",
+    "file-chart-pie"
+   ]
+  },
+  {
+   "id": "file-check-corner",
+   "name": "文件校验通过",
+   "keywords": [
+    "审核通过文件",
+    "file-ok",
+    "file-check-corner"
+   ]
+  },
+  {
+   "id": "book-open-text",
+   "name": "打开的书",
+   "keywords": [
+    "翻开的书",
+    "阅读",
+    "book-open",
+    "book-open-text"
+   ]
+  },
+  {
+   "id": "book-audio",
+   "name": "有声书",
+   "keywords": [
+    "听书",
+    "audiobook",
+    "book-audio"
+   ]
+  },
+  {
+   "id": "book-headphones",
+   "name": "听书",
+   "keywords": [
+    "耳机阅读",
+    "listen-book",
+    "book-headphones"
+   ]
+  },
+  {
+   "id": "book-marked",
+   "name": "带书签的书",
+   "keywords": [
+    "已标记书",
+    "book-mark",
+    "book-marked"
+   ]
+  },
+  {
+   "id": "book-heart",
+   "name": "收藏书",
+   "keywords": [
+    "喜爱书目",
+    "book-fav",
+    "book-heart"
+   ]
+  },
+  {
+   "id": "book-lock",
+   "name": "加密书",
+   "keywords": [
+    "受保护的书",
+    "book-lock",
+    "加密书"
+   ]
+  },
+  {
+   "id": "book-search",
+   "name": "搜索书",
+   "keywords": [
+    "查书",
+    "book-search",
+    "搜索书"
+   ]
+  },
+  {
+   "id": "book-plus",
+   "name": "新增书",
+   "keywords": [
+    "添加书目",
+    "book-add",
+    "book-plus"
+   ]
+  },
+  {
+   "id": "book-check",
+   "name": "书目确认",
+   "keywords": [
+    "已读完",
+    "book-done",
+    "book-check"
+   ]
+  },
+  {
+   "id": "notebook-text",
+   "name": "笔记本",
+   "keywords": [
+    "记事本",
+    "notebook",
+    "notebook-text"
+   ]
+  },
+  {
+   "id": "notepad-text",
+   "name": "记事页",
+   "keywords": [
+    "草稿纸",
+    "notepad",
+    "notepad-text"
+   ]
+  },
+  {
+   "id": "sticky-note",
+   "name": "便签",
+   "keywords": [
+    "便利贴",
+    "sticky",
+    "sticky-note"
+   ]
+  },
+  {
+   "id": "scroll-text",
+   "name": "卷轴文本",
+   "keywords": [
+    "文稿",
+    "scroll",
+    "scroll-text"
+   ]
+  },
+  {
+   "id": "newspaper",
+   "name": "报纸",
+   "keywords": [
+    "报刊",
+    "资讯",
+    "news",
+    "newspaper"
+   ]
+  },
+  {
+   "id": "folder-closed",
+   "name": "关闭的文件夹",
+   "keywords": [
+    "合上的文件夹",
+    "folder-closed",
+    "关闭的文件夹"
+   ]
+  },
+  {
+   "id": "folder-code",
+   "name": "代码文件夹",
+   "keywords": [
+    "源码目录",
+    "folder-code",
+    "代码文件夹"
+   ]
+  },
+  {
+   "id": "folder-git",
+   "name": "Git 文件夹",
+   "keywords": [
+    "代码仓库目录",
+    "folder-git",
+    "Git 文件夹"
+   ]
+  },
+  {
+   "id": "folder-heart",
+   "name": "收藏文件夹",
+   "keywords": [
+    "常用目录",
+    "folder-fav",
+    "folder-heart"
+   ]
+  },
+  {
+   "id": "folder-up",
+   "name": "上级目录",
+   "keywords": [
+    "回到上一层",
+    "folder-up",
+    "上级目录"
+   ]
+  },
+  {
+   "id": "folder-root",
+   "name": "根目录",
+   "keywords": [
+    "站点根",
+    "folder-root",
+    "根目录"
+   ]
+  },
+  {
+   "id": "archive-restore",
+   "name": "恢复归档",
+   "keywords": [
+    "解归档",
+    "restore",
+    "archive-restore"
+   ]
+  },
+  {
+   "id": "bookmark-plus",
+   "name": "新增书签",
+   "keywords": [
+    "加书签",
+    "bookmark-add",
+    "bookmark-plus"
+   ]
+  },
+  {
+   "id": "bookmark-check",
+   "name": "书签确认",
+   "keywords": [
+    "已收藏标记",
+    "bookmark-ok",
+    "bookmark-check"
+   ]
+  },
+  {
+   "id": "library-big",
+   "name": "大图书馆",
+   "keywords": [
+    "馆藏",
+    "library",
+    "library-big"
+   ]
+  }
+ ],
+ "media": [
+  {
+   "id": "music-3",
+   "name": "音乐",
+   "keywords": [
+    "乐曲",
+    "音符",
+    "music",
+    "music-3"
+   ]
+  },
+  {
+   "id": "album",
+   "name": "专辑",
+   "keywords": [
+    "唱片集",
+    "album",
+    "专辑"
+   ]
+  },
+  {
+   "id": "disc",
+   "name": "唱片",
+   "keywords": [
+    "光盘",
+    "disc",
+    "唱片"
+   ]
+  },
+  {
+   "id": "boom-box",
+   "name": "录音机",
+   "keywords": [
+    "便携音响",
+    "boombox",
+    "boom-box"
+   ]
+  },
+  {
+   "id": "speaker",
+   "name": "音箱",
+   "keywords": [
+    "扬声器",
+    "外放",
+    "speaker"
+   ]
+  },
+  {
+   "id": "turntable",
+   "name": "唱盘",
+   "keywords": [
+    "黑胶机",
+    "turntable",
+    "唱盘"
+   ]
+  },
+  {
+   "id": "guitar",
+   "name": "吉他",
+   "keywords": [
+    "弦乐器",
+    "guitar",
+    "吉他"
+   ]
+  },
+  {
+   "id": "piano",
+   "name": "钢琴",
+   "keywords": [
+    "键盘乐器",
+    "piano",
+    "钢琴"
+   ]
+  },
+  {
+   "id": "drum",
+   "name": "鼓",
+   "keywords": [
+    "打击乐",
+    "drum",
+    "鼓"
+   ]
+  },
+  {
+   "id": "metronome",
+   "name": "节拍器",
+   "keywords": [
+    "节奏",
+    "bpm",
+    "metronome"
+   ]
+  },
+  {
+   "id": "radio",
+   "name": "收音机",
+   "keywords": [
+    "广播",
+    "radio",
+    "收音机"
+   ]
+  },
+  {
+   "id": "play-circle",
+   "name": "圆形播放",
+   "keywords": [
+    "播放按钮",
+    "play-circle",
+    "圆形播放"
+   ]
+  },
+  {
+   "id": "pause",
+   "name": "暂停",
+   "keywords": [
+    "暂停播放",
+    "pause",
+    "暂停"
+   ]
+  },
+  {
+   "id": "skip-back",
+   "name": "上一曲",
+   "keywords": [
+    "上一段",
+    "prev",
+    "skip-back"
+   ]
+  },
+  {
+   "id": "skip-forward",
+   "name": "下一曲",
+   "keywords": [
+    "下一段",
+    "next",
+    "skip-forward"
+   ]
+  },
+  {
+   "id": "fast-forward",
+   "name": "快进",
+   "keywords": [
+    "加速播放",
+    "forward",
+    "fast-forward"
+   ]
+  },
+  {
+   "id": "rewind",
+   "name": "快退",
+   "keywords": [
+    "倒回",
+    "rewind",
+    "快退"
+   ]
+  },
+  {
+   "id": "eject",
+   "name": "弹出",
+   "keywords": [
+    "退出介质",
+    "eject",
+    "弹出"
+   ]
+  },
+  {
+   "id": "webcam",
+   "name": "摄像头",
+   "keywords": [
+    "网络相机",
+    "webcam",
+    "摄像头"
+   ]
+  },
+  {
+   "id": "switch-camera",
+   "name": "切换镜头",
+   "keywords": [
+    "前后摄切换",
+    "switch-cam",
+    "switch-camera"
+   ]
+  },
+  {
+   "id": "projector",
+   "name": "投影仪",
+   "keywords": [
+    "投屏设备",
+    "projector",
+    "投影仪"
+   ]
+  },
+  {
+   "id": "presentation",
+   "name": "演示",
+   "keywords": [
+    "汇报",
+    "讲演",
+    "slides",
+    "presentation"
+   ]
+  },
+  {
+   "id": "screen-share",
+   "name": "屏幕共享",
+   "keywords": [
+    "共享桌面",
+    "share-screen",
+    "screen-share"
+   ]
+  },
+  {
+   "id": "tv",
+   "name": "电视",
+   "keywords": [
+    "电视机",
+    "tv",
+    "电视"
+   ]
+  },
+  {
+   "id": "picture-in-picture",
+   "name": "画中画",
+   "keywords": [
+    "小窗播放",
+    "pip",
+    "picture-in-picture"
+   ]
+  },
+  {
+   "id": "image-down",
+   "name": "下载图片",
+   "keywords": [
+    "保存图片",
+    "image-download",
+    "image-down"
+   ]
+  },
+  {
+   "id": "wallpaper",
+   "name": "壁纸",
+   "keywords": [
+    "桌面背景",
+    "wallpaper",
+    "壁纸"
+   ]
+  },
+  {
+   "id": "view",
+   "name": "视图",
+   "keywords": [
+    "查看",
+    "预览视图",
+    "view"
+   ]
+  },
+  {
+   "id": "brush",
+   "name": "画笔",
+   "keywords": [
+    "刷子",
+    "绘制",
+    "brush"
+   ]
+  },
+  {
+   "id": "paintbrush-2",
+   "name": "排刷",
+   "keywords": [
+    "宽笔刷",
+    "paintbrush",
+    "paintbrush-2"
+   ]
+  },
+  {
+   "id": "spray-can",
+   "name": "喷罐",
+   "keywords": [
+    "喷漆",
+    "涂鸦",
+    "spray",
+    "spray-can"
+   ]
+  },
+  {
+   "id": "blend",
+   "name": "混合模式",
+   "keywords": [
+    "图层混合",
+    "blend",
+    "混合模式"
+   ]
+  },
+  {
+   "id": "contrast",
+   "name": "对比度",
+   "keywords": [
+    "明暗对比",
+    "contrast",
+    "对比度"
+   ]
+  },
+  {
+   "id": "aperture",
+   "name": "光圈",
+   "keywords": [
+    "镜头光圈",
+    "aperture",
+    "光圈"
+   ]
+  },
+  {
+   "id": "theater",
+   "name": "剧院",
+   "keywords": [
+    "戏剧演出",
+    "theater",
+    "剧院"
+   ]
+  },
+  {
+   "id": "spotlight",
+   "name": "聚光灯",
+   "keywords": [
+    "打光",
+    "spotlight",
+    "聚光灯"
+   ]
+  }
+ ],
+ "dev": [
+  {
+   "id": "code",
+   "name": "代码",
+   "keywords": [
+    "源码",
+    "编程",
+    "code"
+   ]
+  },
+  {
+   "id": "component",
+   "name": "组件",
+   "keywords": [
+    "模块封装",
+    "component",
+    "组件"
+   ]
+  },
+  {
+   "id": "server-off",
+   "name": "服务器离线",
+   "keywords": [
+    "服务停机",
+    "server-down",
+    "server-off"
+   ]
+  },
+  {
+   "id": "server-plus",
+   "name": "新增服务器",
+   "keywords": [
+    "部署新机",
+    "server-add",
+    "server-plus"
+   ]
+  },
+  {
+   "id": "server-crash",
+   "name": "服务器崩溃",
+   "keywords": [
+    "服务宕机",
+    "crash",
+    "server-crash"
+   ]
+  },
+  {
+   "id": "server-nas",
+   "name": "NAS 存储",
+   "keywords": [
+    "网络存储",
+    "nas",
+    "server-nas"
+   ]
+  },
+  {
+   "id": "router",
+   "name": "路由器",
+   "keywords": [
+    "网关设备",
+    "router",
+    "路由器"
+   ]
+  },
+  {
+   "id": "plug-zap",
+   "name": "通电",
+   "keywords": [
+    "接入电源",
+    "power-plug",
+    "plug-zap"
+   ]
+  },
+  {
+   "id": "unplug",
+   "name": "拔掉",
+   "keywords": [
+    "断开连接",
+    "unplug",
+    "拔掉"
+   ]
+  },
+  {
+   "id": "usb",
+   "name": "USB",
+   "keywords": [
+    "U 盘",
+    "usb",
+    "USB"
+   ]
+  },
+  {
+   "id": "usb-c-port",
+   "name": "Type-C 口",
+   "keywords": [
+    "USB-C 接口",
+    "usb-c",
+    "usb-c-port"
+   ]
+  },
+  {
+   "id": "midi-port",
+   "name": "MIDI 口",
+   "keywords": [
+    "音频接口",
+    "midi",
+    "midi-port"
+   ]
+  },
+  {
+   "id": "card-sim",
+   "name": "SIM 卡",
+   "keywords": [
+    "电话卡",
+    "sim",
+    "card-sim"
+   ]
+  },
+  {
+   "id": "battery-charging",
+   "name": "充电中",
+   "keywords": [
+    "正在充电",
+    "charging",
+    "battery-charging"
+   ]
+  },
+  {
+   "id": "battery-full",
+   "name": "满电",
+   "keywords": [
+    "电量充足",
+    "battery-full",
+    "满电"
+   ]
+  },
+  {
+   "id": "battery-low",
+   "name": "低电",
+   "keywords": [
+    "电量不足",
+    "battery-low",
+    "低电"
+   ]
+  },
+  {
+   "id": "battery-warning",
+   "name": "电池告警",
+   "keywords": [
+    "电量告警",
+    "battery-warn",
+    "battery-warning"
+   ]
+  },
+  {
+   "id": "battery-plus",
+   "name": "加装电池",
+   "keywords": [
+    "扩容电池",
+    "battery-add",
+    "battery-plus"
+   ]
+  },
+  {
+   "id": "power",
+   "name": "电源",
+   "keywords": [
+    "开关机",
+    "power",
+    "电源"
+   ]
+  },
+  {
+   "id": "power-off",
+   "name": "关机",
+   "keywords": [
+    "关闭电源",
+    "shutdown",
+    "power-off"
+   ]
+  },
+  {
+   "id": "signal-high",
+   "name": "信号强",
+   "keywords": [
+    "满格信号",
+    "signal",
+    "signal-high"
+   ]
+  },
+  {
+   "id": "signal-low",
+   "name": "信号弱",
+   "keywords": [
+    "弱信号",
+    "signal",
+    "signal-low"
+   ]
+  },
+  {
+   "id": "signal-zero",
+   "name": "无信号",
+   "keywords": [
+    "断网",
+    "no-signal",
+    "signal-zero"
+   ]
+  },
+  {
+   "id": "wifi",
+   "name": "无线网络",
+   "keywords": [
+    "Wi-Fi",
+    "wifi",
+    "无线网络"
+   ]
+  },
+  {
+   "id": "wifi-high",
+   "name": "Wi-Fi 强",
+   "keywords": [
+    "满格无线",
+    "wifi-full",
+    "wifi-high"
+   ]
+  },
+  {
+   "id": "wifi-low",
+   "name": "Wi-Fi 弱",
+   "keywords": [
+    "无线弱",
+    "wifi-low",
+    "Wi-Fi 弱"
+   ]
+  },
+  {
+   "id": "wifi-sync",
+   "name": "Wi-Fi 同步",
+   "keywords": [
+    "无线同步",
+    "wifi-sync",
+    "Wi-Fi 同步"
+   ]
+  },
+  {
+   "id": "wifi-lock",
+   "name": "Wi-Fi 加密",
+   "keywords": [
+    "无线安全",
+    "wifi-secure",
+    "wifi-lock"
+   ]
+  },
+  {
+   "id": "wifi-cog",
+   "name": "Wi-Fi 设置",
+   "keywords": [
+    "无线配置",
+    "wifi-config",
+    "wifi-cog"
+   ]
+  },
+  {
+   "id": "bluetooth-connected",
+   "name": "蓝牙已连",
+   "keywords": [
+    "蓝牙连接",
+    "bt-on",
+    "bluetooth-connected"
+   ]
+  },
+  {
+   "id": "bluetooth-searching",
+   "name": "蓝牙搜索",
+   "keywords": [
+    "搜索设备",
+    "bt-scan",
+    "bluetooth-searching"
+   ]
+  },
+  {
+   "id": "smartphone",
+   "name": "手机",
+   "keywords": [
+    "移动设备",
+    "phone",
+    "smartphone"
+   ]
+  },
+  {
+   "id": "smartphone-charging",
+   "name": "手机充电",
+   "keywords": [
+    "充电中",
+    "phone-charging",
+    "smartphone-charging"
+   ]
+  },
+  {
+   "id": "tablet",
+   "name": "平板",
+   "keywords": [
+    "平板电脑",
+    "tablet",
+    "平板"
+   ]
+  },
+  {
+   "id": "laptop",
+   "name": "笔记本",
+   "keywords": [
+    "手提电脑",
+    "laptop",
+    "笔记本"
+   ]
+  },
+  {
+   "id": "computer",
+   "name": "台式机",
+   "keywords": [
+    "主机",
+    "desktop",
+    "computer"
+   ]
+  },
+  {
+   "id": "monitor",
+   "name": "显示器",
+   "keywords": [
+    "屏幕",
+    "monitor",
+    "显示器"
+   ]
+  },
+  {
+   "id": "monitor-cog",
+   "name": "显示器设置",
+   "keywords": [
+    "屏幕配置",
+    "monitor-cog",
+    "显示器设置"
+   ]
+  },
+  {
+   "id": "hard-drive-download",
+   "name": "硬盘下载",
+   "keywords": [
+    "落盘",
+    "disk-download",
+    "hard-drive-download"
+   ]
+  },
+  {
+   "id": "keyboard",
+   "name": "键盘",
+   "keywords": [
+    "输入设备",
+    "keyboard",
+    "键盘"
+   ]
+  },
+  {
+   "id": "mouse",
+   "name": "鼠标",
+   "keywords": [
+    "指点设备",
+    "mouse",
+    "鼠标"
+   ]
+  },
+  {
+   "id": "mouse-pointer",
+   "name": "光标指针",
+   "keywords": [
+    "箭头光标",
+    "pointer",
+    "mouse-pointer"
+   ]
+  },
+  {
+   "id": "touchpad",
+   "name": "触控板",
+   "keywords": [
+    "触摸板",
+    "touchpad",
+    "触控板"
+   ]
+  },
+  {
+   "id": "printer",
+   "name": "打印机",
+   "keywords": [
+    "打印设备",
+    "printer",
+    "打印机"
+   ]
+  },
+  {
+   "id": "battery",
+   "name": "电池",
+   "keywords": [
+    "电量",
+    "电池状态",
+    "battery-level",
+    "battery"
+   ]
+  },
+  {
+   "id": "hexagon",
+   "name": "六边形",
+   "keywords": [
+    "多边形",
+    "hex",
+    "几何",
+    "hexagon"
+   ]
+  }
+ ],
+ "time": [
+  {
+   "id": "clock-6",
+   "name": "六点",
+   "keywords": [
+    "时刻",
+    "六点钟",
+    "clock",
+    "clock-6"
+   ]
+  },
+  {
+   "id": "clock-12",
+   "name": "十二点",
+   "keywords": [
+    "正午",
+    "十二点钟",
+    "clock",
+    "clock-12"
+   ]
+  },
+  {
+   "id": "clock-arrow-left",
+   "name": "时间回拨",
+   "keywords": [
+    "往前调时间",
+    "clock-back",
+    "clock-arrow-left"
+   ]
+  },
+  {
+   "id": "clock-arrow-right",
+   "name": "时间前拨",
+   "keywords": [
+    "往后调时间",
+    "clock-fwd",
+    "clock-arrow-right"
+   ]
+  },
+  {
+   "id": "clock-fading",
+   "name": "时间流逝",
+   "keywords": [
+    "渐逝时间",
+    "time-passing",
+    "clock-fading"
+   ]
+  },
+  {
+   "id": "alarm-clock-minus",
+   "name": "减少闹钟",
+   "keywords": [
+    "删闹钟",
+    "alarm-minus",
+    "alarm-clock-minus"
+   ]
+  },
+  {
+   "id": "alarm-clock-off",
+   "name": "关闭闹钟",
+   "keywords": [
+    "闹钟静音",
+    "alarm-off",
+    "alarm-clock-off"
+   ]
+  },
+  {
+   "id": "alarm-minus",
+   "name": "提醒减少",
+   "keywords": [
+    "减少提醒",
+    "reminder-minus",
+    "alarm-minus"
+   ]
+  },
+  {
+   "id": "calendar",
+   "name": "日历",
+   "keywords": [
+    "日程表",
+    "calendar",
+    "日历"
+   ]
+  },
+  {
+   "id": "calendar-1",
+   "name": "单日",
+   "keywords": [
+    "某一天",
+    "date",
+    "calendar-1"
+   ]
+  },
+  {
+   "id": "calendar-fold",
+   "name": "折叠日历",
+   "keywords": [
+    "便携日历",
+    "calendar-fold",
+    "折叠日历"
+   ]
+  },
+  {
+   "id": "calendar-arrow-down",
+   "name": "日程推后",
+   "keywords": [
+    "延期",
+    "postpone",
+    "calendar-arrow-down"
+   ]
+  },
+  {
+   "id": "calendar-arrow-up",
+   "name": "日程提前",
+   "keywords": [
+    "提早",
+    "advance",
+    "calendar-arrow-up"
+   ]
+  },
+  {
+   "id": "calendar-arrow-left",
+   "name": "上一周期",
+   "keywords": [
+    "往前翻",
+    "prev-period",
+    "calendar-arrow-left"
+   ]
+  },
+  {
+   "id": "calendar-arrow-right",
+   "name": "下一周期",
+   "keywords": [
+    "往后翻",
+    "next-period",
+    "calendar-arrow-right"
+   ]
+  },
+  {
+   "id": "calendar-chevrons-left",
+   "name": "回到上季度",
+   "keywords": [
+    "快速前翻",
+    "fast-back",
+    "calendar-chevrons-left"
+   ]
+  },
+  {
+   "id": "calendar-chevrons-right",
+   "name": "跳到下季度",
+   "keywords": [
+    "快速后翻",
+    "fast-fwd",
+    "calendar-chevrons-right"
+   ]
+  },
+  {
+   "id": "calendar-plus-2",
+   "name": "加日程",
+   "keywords": [
+    "新增日程",
+    "calendar-add",
+    "calendar-plus-2"
+   ]
+  },
+  {
+   "id": "calendar-minus-2",
+   "name": "减日程",
+   "keywords": [
+    "删除日程",
+    "calendar-del",
+    "calendar-minus-2"
+   ]
+  },
+  {
+   "id": "clipboard-clock",
+   "name": "定时记录",
+   "keywords": [
+    "限时任务",
+    "timed-task",
+    "clipboard-clock"
+   ]
+  },
+  {
+   "id": "hourglass-cog",
+   "name": "沙漏设置",
+   "keywords": [
+    "等待配置",
+    "hourglass-cog",
+    "沙漏设置"
+   ]
+  },
+  {
+   "id": "timer-off",
+   "name": "关闭计时",
+   "keywords": [
+    "停止计时",
+    "timer-off",
+    "关闭计时"
+   ]
+  },
+  {
+   "id": "timer-reset",
+   "name": "重置计时",
+   "keywords": [
+    "计时归零",
+    "timer-reset",
+    "重置计时"
+   ]
+  },
+  {
+   "id": "list-clock",
+   "name": "定时清单",
+   "keywords": [
+    "限时清单",
+    "list-timed",
+    "list-clock"
+   ]
+  },
+  {
+   "id": "list-restart",
+   "name": "重新开始",
+   "keywords": [
+    "重头来",
+    "restart",
+    "list-restart"
+   ]
+  },
+  {
+   "id": "milestone",
+   "name": "里程碑",
+   "keywords": [
+    "关键节点",
+    "milestone",
+    "里程碑"
+   ]
+  },
+  {
+   "id": "timeline",
+   "name": "时间线",
+   "keywords": [
+    "纵向时间轴",
+    "timeline",
+    "时间线"
+   ]
+  },
+  {
+   "id": "watch",
+   "name": "手表",
+   "keywords": [
+    "腕表",
+    "watch",
+    "手表"
+   ]
+  },
+  {
+   "id": "flag-triangle-left",
+   "name": "左三角旗",
+   "keywords": [
+    "标记旗",
+    "flag-left",
+    "flag-triangle-left"
+   ]
+  },
+  {
+   "id": "flag-triangle-right",
+   "name": "右三角旗",
+   "keywords": [
+    "标记旗",
+    "flag-right",
+    "flag-triangle-right"
+   ]
+  },
+  {
+   "id": "repeat-1",
+   "name": "单次循环",
+   "keywords": [
+    "重复一次",
+    "repeat-one",
+    "repeat-1"
+   ]
+  },
+  {
+   "id": "repeat-off",
+   "name": "关闭循环",
+   "keywords": [
+    "停止重复",
+    "repeat-off",
+    "关闭循环"
+   ]
+  }
+ ],
+ "travel": [
+  {
+   "id": "earth",
+   "name": "地球",
+   "keywords": [
+    "世界",
+    "地球仪",
+    "earth"
+   ]
+  },
+  {
+   "id": "earth-lock",
+   "name": "全球加密",
+   "keywords": [
+    "地区限制",
+    "geo-lock",
+    "earth-lock"
+   ]
+  },
+  {
+   "id": "globe-off",
+   "name": "关闭全球",
+   "keywords": [
+    "停用全球版",
+    "globe-off",
+    "关闭全球"
+   ]
+  },
+  {
+   "id": "globe-lock",
+   "name": "全球加密",
+   "keywords": [
+    "跨境安全",
+    "globe-lock",
+    "全球加密"
+   ]
+  },
+  {
+   "id": "globe-check",
+   "name": "全球可用",
+   "keywords": [
+    "支持全球",
+    "globe-ok",
+    "globe-check"
+   ]
+  },
+  {
+   "id": "map-pin-x",
+   "name": "地点无效",
+   "keywords": [
+    "地点失效",
+    "pin-invalid",
+    "map-pin-x"
+   ]
+  },
+  {
+   "id": "map-pin-off",
+   "name": "关闭地点",
+   "keywords": [
+    "取消标记地点",
+    "pin-off",
+    "map-pin-off"
+   ]
+  },
+  {
+   "id": "locate",
+   "name": "定位",
+   "keywords": [
+    "当前位置",
+    "locate",
+    "定位"
+   ]
+  },
+  {
+   "id": "locate-off",
+   "name": "关闭定位",
+   "keywords": [
+    "停止定位",
+    "locate-off",
+    "关闭定位"
+   ]
+  },
+  {
+   "id": "route-off",
+   "name": "关闭路线",
+   "keywords": [
+    "取消路线",
+    "route-off",
+    "关闭路线"
+   ]
+  },
+  {
+   "id": "signpost",
+   "name": "路标",
+   "keywords": [
+    "指示牌",
+    "signpost",
+    "路标"
+   ]
+  },
+  {
+   "id": "road",
+   "name": "道路",
+   "keywords": [
+    "公路",
+    "road",
+    "道路"
+   ]
+  },
+  {
+   "id": "bridge",
+   "name": "桥",
+   "keywords": [
+    "桥梁",
+    "bridge",
+    "桥"
+   ]
+  },
+  {
+   "id": "train-track",
+   "name": "铁轨",
+   "keywords": [
+    "铁路",
+    "rail",
+    "train-track"
+   ]
+  },
+  {
+   "id": "tram-front",
+   "name": "有轨电车",
+   "keywords": [
+    "轻轨",
+    "tram",
+    "tram-front"
+   ]
+  },
+  {
+   "id": "train",
+   "name": "火车",
+   "keywords": [
+    "列车",
+    "train",
+    "火车"
+   ]
+  },
+  {
+   "id": "cable-car",
+   "name": "缆车",
+   "keywords": [
+    "索道",
+    "cable-car",
+    "缆车"
+   ]
+  },
+  {
+   "id": "caravan",
+   "name": "房车",
+   "keywords": [
+    "露营车",
+    "caravan",
+    "房车"
+   ]
+  },
+  {
+   "id": "rocket",
+   "name": "火箭",
+   "keywords": [
+    "快速启动",
+    "发布",
+    "rocket"
+   ]
+  },
+  {
+   "id": "plane-landing",
+   "name": "降落",
+   "keywords": [
+    "抵达",
+    "landing",
+    "plane-landing"
+   ]
+  },
+  {
+   "id": "sailboat",
+   "name": "帆船",
+   "keywords": [
+    "航行",
+    "sail",
+    "sailboat"
+   ]
+  },
+  {
+   "id": "ship-cargo",
+   "name": "货轮",
+   "keywords": [
+    "海运",
+    "cargo",
+    "ship-cargo"
+   ]
+  },
+  {
+   "id": "ship-wheel",
+   "name": "舵轮",
+   "keywords": [
+    "掌舵",
+    "航海",
+    "helm",
+    "ship-wheel"
+   ]
+  },
+  {
+   "id": "anchor",
+   "name": "锚",
+   "keywords": [
+    "停泊",
+    "稳定",
+    "anchor"
+   ]
+  },
+  {
+   "id": "tent",
+   "name": "帐篷",
+   "keywords": [
+    "露营",
+    "tent",
+    "帐篷"
+   ]
+  },
+  {
+   "id": "mountain",
+   "name": "山",
+   "keywords": [
+    "山峰",
+    "mountain",
+    "山"
+   ]
+  },
+  {
+   "id": "park",
+   "name": "公园",
+   "keywords": [
+    "绿地",
+    "park",
+    "公园"
+   ]
+  },
+  {
+   "id": "tree-palm",
+   "name": "椰树",
+   "keywords": [
+    "热带",
+    "palmtree",
+    "tree-palm"
+   ]
+  },
+  {
+   "id": "tree-pine",
+   "name": "松树",
+   "keywords": [
+    "针叶树",
+    "pine",
+    "tree-pine"
+   ]
+  },
+  {
+   "id": "footprints",
+   "name": "脚印",
+   "keywords": [
+    "足迹",
+    "步行",
+    "footprints"
+   ]
+  },
+  {
+   "id": "parking-meter",
+   "name": "停车计时",
+   "keywords": [
+    "咪表",
+    "parking-meter",
+    "停车计时"
+   ]
+  },
+  {
+   "id": "scooter",
+   "name": "滑板车",
+   "keywords": [
+    "电动滑板",
+    "scooter",
+    "滑板车"
+   ]
+  },
+  {
+   "id": "car-battery",
+   "name": "车电池",
+   "keywords": [
+    "汽车电瓶",
+    "car-battery",
+    "车电池"
+   ]
+  },
+  {
+   "id": "engine",
+   "name": "引擎",
+   "keywords": [
+    "发动机",
+    "engine",
+    "引擎"
+   ]
+  },
+  {
+   "id": "traffic-cone",
+   "name": "锥桶",
+   "keywords": [
+    "路障",
+    "施工",
+    "cone",
+    "traffic-cone"
+   ]
+  },
+  {
+   "id": "lighthouse",
+   "name": "灯塔",
+   "keywords": [
+    "航标",
+    "lighthouse",
+    "灯塔"
+   ]
+  }
+ ],
+ "life": [
+  {
+   "id": "sunrise",
+   "name": "日出",
+   "keywords": [
+    "清晨",
+    "sunrise",
+    "日出"
+   ]
+  },
+  {
+   "id": "sunset",
+   "name": "日落",
+   "keywords": [
+    "黄昏",
+    "sunset",
+    "日落"
+   ]
+  },
+  {
+   "id": "moon-star",
+   "name": "星月",
+   "keywords": [
+    "夜间",
+    "夜晚",
+    "night",
+    "moon-star"
+   ]
+  },
+  {
+   "id": "snowflake",
+   "name": "雪花",
+   "keywords": [
+    "下雪",
+    "寒冷",
+    "snow",
+    "snowflake"
+   ]
+  },
+  {
+   "id": "rainbow",
+   "name": "彩虹",
+   "keywords": [
+    "雨后",
+    "rainbow",
+    "彩虹"
+   ]
+  },
+  {
+   "id": "tornado",
+   "name": "龙卷风",
+   "keywords": [
+    "强风",
+    "tornado",
+    "龙卷风"
+   ]
+  },
+  {
+   "id": "haze",
+   "name": "雾霾",
+   "keywords": [
+    "能见度低",
+    "haze",
+    "雾霾"
+   ]
+  },
+  {
+   "id": "cloudy",
+   "name": "多云",
+   "keywords": [
+    "阴天",
+    "cloudy",
+    "多云"
+   ]
+  },
+  {
+   "id": "wind",
+   "name": "风",
+   "keywords": [
+    "刮风",
+    "wind",
+    "风"
+   ]
+  },
+  {
+   "id": "cloud-rain",
+   "name": "下雨",
+   "keywords": [
+    "雨天",
+    "rain",
+    "cloud-rain"
+   ]
+  },
+  {
+   "id": "cloud-snow",
+   "name": "下雪天",
+   "keywords": [
+    "降雪",
+    "snow-cloud",
+    "cloud-snow"
+   ]
+  },
+  {
+   "id": "cloud-sun",
+   "name": "晴间多云",
+   "keywords": [
+    "多云转晴",
+    "partly",
+    "cloud-sun"
+   ]
+  },
+  {
+   "id": "cloud-lightning",
+   "name": "雷雨",
+   "keywords": [
+    "雷电",
+    "thunder",
+    "cloud-lightning"
+   ]
+  },
+  {
+   "id": "thermometer-sun",
+   "name": "高温",
+   "keywords": [
+    "炎热",
+    "高温预警",
+    "hot",
+    "thermometer-sun"
+   ]
+  },
+  {
+   "id": "eclipse",
+   "name": "日食",
+   "keywords": [
+    "食相",
+    "eclipse",
+    "日食"
+   ]
+  },
+  {
+   "id": "waves",
+   "name": "波浪",
+   "keywords": [
+    "水面",
+    "海浪",
+    "waves"
+   ]
+  },
+  {
+   "id": "apple",
+   "name": "苹果",
+   "keywords": [
+    "水果",
+    "apple",
+    "苹果"
+   ]
+  },
+  {
+   "id": "cherry",
+   "name": "樱桃",
+   "keywords": [
+    "水果",
+    "cherry",
+    "樱桃"
+   ]
+  },
+  {
+   "id": "egg",
+   "name": "鸡蛋",
+   "keywords": [
+    "蛋类",
+    "egg",
+    "鸡蛋"
+   ]
+  },
+  {
+   "id": "fish",
+   "name": "鱼",
+   "keywords": [
+    "海鲜",
+    "fish",
+    "鱼"
+   ]
+  },
+  {
+   "id": "sandwich",
+   "name": "三明治",
+   "keywords": [
+    "简餐",
+    "sandwich",
+    "三明治"
+   ]
+  },
+  {
+   "id": "cookie",
+   "name": "饼干",
+   "keywords": [
+    "曲奇",
+    "cookie",
+    "饼干"
+   ]
+  },
+  {
+   "id": "milk",
+   "name": "牛奶",
+   "keywords": [
+    "乳制品",
+    "milk",
+    "牛奶"
+   ]
+  },
+  {
+   "id": "glass-water",
+   "name": "一杯水",
+   "keywords": [
+    "饮水",
+    "喝水提醒",
+    "water",
+    "glass-water"
+   ]
+  },
+  {
+   "id": "sofa",
+   "name": "沙发",
+   "keywords": [
+    "客厅",
+    "sofa",
+    "沙发"
+   ]
+  },
+  {
+   "id": "lamp-desk",
+   "name": "台灯",
+   "keywords": [
+    "书桌灯",
+    "desk-lamp",
+    "lamp-desk"
+   ]
+  },
+  {
+   "id": "refrigerator",
+   "name": "冰箱",
+   "keywords": [
+    "冷藏",
+    "fridge",
+    "refrigerator"
+   ]
+  },
+  {
+   "id": "washing-machine",
+   "name": "洗衣机",
+   "keywords": [
+    "洗衣",
+    "washer",
+    "washing-machine"
+   ]
+  },
+  {
+   "id": "heater",
+   "name": "取暖器",
+   "keywords": [
+    "暖气",
+    "heater",
+    "取暖器"
+   ]
+  },
+  {
+   "id": "air-vent",
+   "name": "通风口",
+   "keywords": [
+    "空调送风",
+    "vent",
+    "air-vent"
+   ]
+  },
+  {
+   "id": "door-open",
+   "name": "开着的门",
+   "keywords": [
+    "进门",
+    "door-open",
+    "开着的门"
+   ]
+  },
+  {
+   "id": "door-closed",
+   "name": "关着的门",
+   "keywords": [
+    "关门",
+    "door-closed",
+    "关着的门"
+   ]
+  },
+  {
+   "id": "umbrella",
+   "name": "雨伞",
+   "keywords": [
+    "挡雨",
+    "umbrella",
+    "雨伞"
+   ]
+  },
+  {
+   "id": "recycle",
+   "name": "回收",
+   "keywords": [
+    "循环利用",
+    "环保",
+    "recycle"
+   ]
+  },
+  {
+   "id": "hammer",
+   "name": "锤子",
+   "keywords": [
+    "敲打",
+    "hammer",
+    "锤子"
+   ]
+  },
+  {
+   "id": "wrench",
+   "name": "扳手",
+   "keywords": [
+    "维修",
+    "wrench",
+    "扳手"
+   ]
+  },
+  {
+   "id": "toolbox",
+   "name": "工具箱",
+   "keywords": [
+    "工具包",
+    "toolbox",
+    "工具箱"
+   ]
+  },
+  {
+   "id": "magnet",
+   "name": "磁铁",
+   "keywords": [
+    "吸附",
+    "magnet",
+    "磁铁"
+   ]
+  },
+  {
+   "id": "cat",
+   "name": "猫",
+   "keywords": [
+    "宠物猫",
+    "cat",
+    "猫"
+   ]
+  },
+  {
+   "id": "bird",
+   "name": "鸟",
+   "keywords": [
+    "飞鸟",
+    "bird",
+    "鸟"
+   ]
+  },
+  {
+   "id": "school",
+   "name": "学校",
+   "keywords": [
+    "校园",
+    "school",
+    "学校"
+   ]
+  },
+  {
+   "id": "university",
+   "name": "大学",
+   "keywords": [
+    "高校",
+    "university",
+    "大学"
+   ]
+  },
+  {
+   "id": "hotel",
+   "name": "酒店",
+   "keywords": [
+    "住宿",
+    "hotel",
+    "酒店"
+   ]
+  },
+  {
+   "id": "whistle",
+   "name": "哨子",
+   "keywords": [
+    "裁判哨",
+    "whistle",
+    "哨子"
+   ]
+  }
+ ],
+ "status": [
+  {
+   "id": "circle-check-big",
+   "name": "大勾",
+   "keywords": [
+    "确认完成",
+    "成功",
+    "check-big",
+    "circle-check-big"
+   ]
+  },
+  {
+   "id": "square-check",
+   "name": "方形勾选",
+   "keywords": [
+    "勾选框",
+    "checkbox",
+    "square-check"
+   ]
+  },
+  {
+   "id": "square-check-big",
+   "name": "方形大勾",
+   "keywords": [
+    "批量完成",
+    "check-square",
+    "square-check-big"
+   ]
+  },
+  {
+   "id": "check-line",
+   "name": "勾线",
+   "keywords": [
+    "简单勾",
+    "done-line",
+    "check-line"
+   ]
+  },
+  {
+   "id": "circle-slash",
+   "name": "禁止",
+   "keywords": [
+    "不可用",
+    "no-entry",
+    "circle-slash"
+   ]
+  },
+  {
+   "id": "circle-off",
+   "name": "关闭状态",
+   "keywords": [
+    "已停用",
+    "disabled",
+    "circle-off"
+   ]
+  },
+  {
+   "id": "shield-ban",
+   "name": "安全禁用",
+   "keywords": [
+    "拦截",
+    "blocked",
+    "shield-ban"
+   ]
+  },
+  {
+   "id": "shield-x",
+   "name": "安全拦截",
+   "keywords": [
+    "防护失败",
+    "shield-fail",
+    "shield-x"
+   ]
+  },
+  {
+   "id": "shield-off",
+   "name": "关闭防护",
+   "keywords": [
+    "解除保护",
+    "shield-off",
+    "关闭防护"
+   ]
+  },
+  {
+   "id": "shield-plus",
+   "name": "加强防护",
+   "keywords": [
+    "提升安全",
+    "shield-add",
+    "shield-plus"
+   ]
+  },
+  {
+   "id": "shield-lock",
+   "name": "安全锁",
+   "keywords": [
+    "加固",
+    "shield-lock",
+    "安全锁"
+   ]
+  },
+  {
+   "id": "siren",
+   "name": "警报",
+   "keywords": [
+    "警笛",
+    "紧急",
+    "siren"
+   ]
+  },
+  {
+   "id": "bomb",
+   "name": "炸弹",
+   "keywords": [
+    "严重问题",
+    "崩溃",
+    "bomb"
+   ]
+  },
+  {
+   "id": "skull",
+   "name": "骷髅",
+   "keywords": [
+    "致命错误",
+    "死亡",
+    "skull"
+   ]
+  },
+  {
+   "id": "radiation",
+   "name": "辐射",
+   "keywords": [
+    "危险源",
+    "radiation",
+    "辐射"
+   ]
+  },
+  {
+   "id": "circle-stop",
+   "name": "圆形停止",
+   "keywords": [
+    "终止",
+    "stop-circle",
+    "circle-stop"
+   ]
+  },
+  {
+   "id": "octagon",
+   "name": "八边形",
+   "keywords": [
+    "停止标志底",
+    "octagon",
+    "八边形"
+   ]
+  },
+  {
+   "id": "triangle",
+   "name": "三角形",
+   "keywords": [
+    "警示底形",
+    "triangle-shape",
+    "几何",
+    "triangle"
+   ]
+  },
+  {
+   "id": "siren-off",
+   "name": "关闭警报",
+   "keywords": [
+    "解除警报",
+    "静音告警",
+    "alarm-off",
+    "siren-off"
+   ]
+  }
+ ]
+}

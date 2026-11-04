@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Icon Library · 图标选型</title>
+<style>
+:root{
+  --bg:#fafafa; --surface:#fff; --surface-2:#f5f5f5; --surface-3:#f0f0f0;
+  --line:#ebebeb; --line-2:#e0e0e0; --line-3:#d4d4d4;
+  --ink:#0a0a0a; --ink-2:#525252; --muted:#8f8f8f;
+  --accent:#5b5bd6; --accent-ink:#fff; --accent-soft:rgba(91,91,214,.10);
+  --shadow-sm:0 1px 2px rgba(0,0,0,.04);
+  --shadow-md:0 4px 16px -4px rgba(0,0,0,.10),0 1px 2px rgba(0,0,0,.04);
+  --shadow-lg:0 12px 40px -12px rgba(0,0,0,.24),0 2px 8px -2px rgba(0,0,0,.08);
+  --r-sm:7px; --r-md:10px; --r-lg:14px;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+  --sans:"Inter","SF Pro Text",-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+}
+[data-theme="dark"]{
+  --bg:#09090b; --surface:#101012; --surface-2:#17171a; --surface-3:#1e1e22;
+  --line:#1f1f23; --line-2:#2a2a30; --line-3:#3a3a42;
+  --ink:#fafafa; --ink-2:#a1a1aa; --muted:#71717a;
+  --accent:#8b8bf5; --accent-ink:#0a0a0a; --accent-soft:rgba(139,139,245,.14);
+  --shadow-sm:0 1px 2px rgba(0,0,0,.5);
+  --shadow-md:0 4px 16px -4px rgba(0,0,0,.6);
+  --shadow-lg:0 16px 48px -12px rgba(0,0,0,.8);
+}
+*{box-sizing:border-box}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:8px;border:3px solid var(--bg)}
+::-webkit-scrollbar-thumb:hover{background:var(--line-3)}
+::-webkit-scrollbar-track{background:transparent}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:13px;line-height:1.5;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+button:disabled{opacity:.38;cursor:not-allowed}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+code{font-family:var(--mono)}
+::selection{background:var(--accent-soft)}
+
+/* ── header ───────────────────────────────────────────────── */
+.top{
+  position:sticky;top:0;z-index:60;height:56px;display:flex;align-items:center;gap:20px;
+  padding:0 20px;background:color-mix(in srgb,var(--bg) 82%,transparent);
+  backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--line);
+}
+.brand{display:flex;align-items:center;gap:10px;flex:none;min-width:0}
+.mark{width:26px;height:26px;border-radius:7px;background:var(--ink);display:grid;grid-template-columns:1fr 1fr;gap:2.5px;padding:6px;flex:none}
+.mark i{background:var(--bg);border-radius:1px;display:block}
+.brand b{font-size:13.5px;font-weight:600;letter-spacing:-.01em;white-space:nowrap}
+.brand .ver{font-family:var(--mono);font-size:10.5px;color:var(--muted);border:1px solid var(--line);padding:1px 5px;border-radius:5px}
+
+.search{position:relative;flex:1;max-width:420px;display:flex;align-items:center}
+.search svg{position:absolute;left:10px;color:var(--muted);pointer-events:none}
+.search input{
+  width:100%;height:34px;padding:0 62px 0 32px;border:1px solid var(--line-2);border-radius:var(--r-sm);
+  background:var(--surface);color:var(--ink);font-size:13px;transition:border-color .12s,box-shadow .12s;
+}
+.search input::placeholder{color:var(--muted)}
+.search input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.search .hint{position:absolute;right:8px;display:flex;gap:4px;align-items:center;pointer-events:none}
+.search kbd{font-family:var(--mono);font-size:10.5px;color:var(--muted);border:1px solid var(--line-2);border-bottom-width:2px;border-radius:4px;padding:1px 5px;background:var(--surface-2)}
+.search .clear{position:absolute;right:6px;width:22px;height:22px;display:none;place-items:center;border-radius:5px;color:var(--muted)}
+.search .clear:hover{background:var(--surface-3);color:var(--ink)}
+.search.has-value .hint{display:none}
+.search.has-value .clear{display:grid}
+
+.top-right{margin-left:auto;display:flex;align-items:center;gap:12px;flex:none}
+.spec{font-family:var(--mono);font-size:10.5px;color:var(--muted);letter-spacing:-.02em}
+.iconbtn{width:30px;height:30px;display:grid;place-items:center;border-radius:7px;color:var(--ink-2);transition:background .12s,color .12s}
+.iconbtn:hover{background:var(--surface-2);color:var(--ink)}
+
+/* ── layout ───────────────────────────────────────────────── */
+.layout{display:flex;align-items:flex-start;max-width:1560px;margin:0 auto}
+aside{
+  position:sticky;top:56px;width:212px;flex:none;height:calc(100vh - 56px);overflow-y:auto;
+  padding:18px 12px 24px 20px;border-right:1px solid var(--line);
+}
+.group+.group{margin-top:22px}
+.glabel{font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:0 8px;margin-bottom:6px}
+.nav{
+  width:100%;display:flex;align-items:center;gap:8px;height:30px;padding:0 8px;border-radius:6px;
+  color:var(--ink-2);font-size:12.5px;text-align:left;transition:background .12s,color .12s;
+}
+.nav:hover{background:var(--surface-2);color:var(--ink)}
+.nav.on{background:var(--surface-2);color:var(--ink);font-weight:550}
+.nav em{margin-left:auto;font-style:normal;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.nav.on em{color:var(--ink-2)}
+.nav .dot{width:4px;height:4px;border-radius:50%;background:var(--accent);margin-left:6px;opacity:0;flex:none}
+.nav.has .dot{opacity:1}
+.aside-foot{margin-top:26px;padding:12px 8px 0;border-top:1px solid var(--line);font-family:var(--mono);font-size:10px;line-height:1.9;color:var(--muted)}
+
+main{flex:1;min-width:0;padding:0 24px 96px}
+.bar{
+  position:sticky;top:56px;z-index:40;display:flex;align-items:center;gap:12px;height:56px;
+  background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.bar h1{font-size:14px;font-weight:600;letter-spacing:-.01em;margin:0}
+.bar .meta{font-size:11.5px;color:var(--muted);font-family:var(--mono)}
+.bar-right{margin-left:auto;display:flex;align-items:center;gap:6px}
+.seg{display:flex;padding:2px;background:var(--surface-2);border-radius:7px;gap:1px}
+.seg button{height:24px;padding:0 9px;border-radius:5px;font-size:11.5px;color:var(--muted);transition:.12s}
+.seg button:hover{color:var(--ink)}
+.seg button.on{background:var(--surface);color:var(--ink);box-shadow:var(--shadow-sm);font-weight:550}
+.tbtn{height:28px;padding:0 10px;border:1px solid var(--line-2);border-radius:6px;font-size:11.5px;color:var(--ink-2);transition:.12s;white-space:nowrap}
+.tbtn:hover{border-color:var(--line-3);color:var(--ink);background:var(--surface)}
+
+.cat-head{display:flex;align-items:baseline;gap:10px;padding:26px 0 12px;position:sticky;top:112px;background:var(--bg);z-index:10}
+.cat-head h2{font-size:12px;font-weight:600;letter-spacing:.01em;margin:0}
+.cat-head span{font-size:11px;color:var(--muted)}
+.cat-head p{margin:0;font-size:11.5px;color:var(--muted);flex:1}
+.cat-head .line{flex:1;height:1px;background:var(--line)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px}
+
+.card{
+  position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  min-height:124px;padding:20px 10px 14px;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--r-md);cursor:pointer;transition:border-color .12s,box-shadow .12s,transform .12s,background .12s;
+  user-select:none;
+}
+.card:hover{border-color:var(--line-3);box-shadow:var(--shadow-md);transform:translateY(-1px)}
+.card:active{transform:translateY(0)}
+.card.sel{border-color:color-mix(in srgb,var(--accent) 60%,var(--line));box-shadow:0 0 0 3px var(--accent-soft)}
+.glyph{width:44px;height:44px;display:grid;place-items:center;color:var(--ink)}
+.glyph svg{display:block}
+.card .meta{display:flex;flex-direction:column;align-items:center;gap:2px;min-width:0;max-width:100%}
+.card .nm{font-size:12.5px;font-weight:550;letter-spacing:-.005em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.card code{font-size:10px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;letter-spacing:-.02em}
+.card.sel .nm{color:var(--ink)}
+
+.tick{
+  position:absolute;top:8px;left:8px;width:16px;height:16px;border-radius:5px;border:1.5px solid var(--line-3);
+  background:var(--surface);display:grid;place-items:center;opacity:0;transition:opacity .12s,background .12s,border-color .12s;
+}
+.tick svg{color:var(--accent-ink);opacity:0}
+.card:hover .tick,.card:focus-within .tick{opacity:1}
+.card.sel .tick{opacity:1;background:var(--accent);border-color:var(--accent)}
+.card.sel .tick svg{opacity:1}
+
+.card .num{
+  position:absolute;top:6px;right:7px;font:600 10px/1 var(--mono);letter-spacing:0;
+  color:var(--muted);background:var(--surface-3);border-radius:5px;padding:4px 5px;pointer-events:none;
+}
+.card.sel .num{color:var(--accent);background:var(--accent-soft)}
+.numbered .acts{top:28px}
+.acts{position:absolute;top:6px;right:6px;display:flex;gap:2px;opacity:0;transition:opacity .12s}
+.card:hover .acts,.card:focus-within .acts{opacity:1}
+.act{width:24px;height:24px;display:grid;place-items:center;border-radius:5px;color:var(--muted);transition:.12s}
+.act:hover{background:var(--surface-3);color:var(--ink)}
+.act.done{color:var(--accent)}
+
+.empty{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:120px 0;color:var(--muted)}
+.empty b{color:var(--ink);font-weight:550;font-size:13px}
+.empty button{border:1px solid var(--line-2);border-radius:6px;padding:5px 12px;font-size:12px;color:var(--ink-2)}
+.empty button:hover{border-color:var(--line-3);color:var(--ink)}
+
+/* ── selection bar ────────────────────────────────────────── */
+.selbar{
+  position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(12px);z-index:80;
+  display:flex;align-items:center;gap:16px;padding:7px 7px 7px 16px;background:var(--surface);
+  border:1px solid var(--line-2);border-radius:12px;box-shadow:var(--shadow-lg);
+  opacity:0;pointer-events:none;transition:opacity .16s,transform .16s;white-space:nowrap;
+}
+.selbar.show{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.selinfo{font-size:12px;color:var(--ink-2);display:flex;align-items:center;gap:6px}
+.selinfo b{color:var(--ink);font-weight:600;font-family:var(--mono);font-size:13px}
+.selacts{display:flex;align-items:center;gap:4px}
+.btn{height:30px;padding:0 11px;border-radius:7px;font-size:12px;color:var(--ink-2);transition:.12s;border:1px solid transparent}
+.btn:hover{background:var(--surface-2);color:var(--ink)}
+.btn.primary{background:var(--ink);color:var(--bg);font-weight:550;padding:0 14px}
+.btn.primary:hover{opacity:.86;background:var(--ink);color:var(--bg)}
+.btn.ghost{border-color:var(--line-2)}
+.btn.ghost:hover{border-color:var(--line-3);background:var(--surface)}
+.divider{width:1px;height:18px;background:var(--line)}
+
+.toast{
+  position:fixed;left:50%;bottom:78px;transform:translateX(-50%) translateY(8px);z-index:90;
+  background:var(--ink);color:var(--bg);font-size:12px;padding:7px 13px;border-radius:7px;
+  opacity:0;pointer-events:none;transition:opacity .18s,transform .18s;box-shadow:var(--shadow-md);
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media (max-width:900px){
+  .layout{flex-direction:column;align-items:stretch}
+  aside{
+    position:sticky;top:56px;z-index:35;display:flex;flex-wrap:nowrap;align-items:center;gap:4px;
+    width:100%;height:auto;overflow-x:auto;overflow-y:hidden;padding:8px 12px;
+    border-right:0;border-bottom:1px solid var(--line);
+    background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);
+    scrollbar-width:none;
+  }
+  aside::-webkit-scrollbar{display:none}
+  aside .group{display:contents}
+  aside .glabel{display:none}
+  aside #catList{display:contents}
+  aside .nav{
+    display:inline-flex;width:auto;flex:none;height:26px;padding:0 10px;border:1px solid var(--line-2);
+    border-radius:20px;font-size:12px;white-space:nowrap;background:var(--surface);
+  }
+  aside .nav.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  aside .nav.on em{color:var(--bg);opacity:.6}
+  aside .nav em{display:inline;margin-left:5px;font-size:10px}
+  aside .nav .dot{display:none}
+  .aside-foot{display:none}
+  main{padding:0 14px 100px}
+  .bar{position:static;height:auto;padding:14px 0 6px;flex-wrap:wrap;gap:8px;background:none;backdrop-filter:none;border-bottom:0}
+  .bar .meta{display:none}
+  .bar-right{margin-left:auto;gap:6px}
+  .seg{display:none}
+  .tbtn{display:inline-block}
+  .cat-head{position:static;padding:20px 0 10px}
+  .cat-head p{display:none}
+  .top{gap:10px;padding:0 12px}
+  .brand b{display:none}
+  .brand .ver{display:none}
+  .search{max-width:none;min-width:0}
+  .spec{display:none}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:8px}
+  .card{min-height:112px;padding:18px 8px 12px}
+  .selbar{gap:10px;padding-left:12px;bottom:14px;max-width:calc(100vw - 20px)}
+  .selbar .btn{padding:0 9px}
+}
+@media (hover:none){
+  .tick{opacity:1}
+  .acts{opacity:1}
+}
+@media (max-width:620px){
+  .selbar .hide-sm{display:none}
+  .selinfo span{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">
+    <div class="mark"><i></i><i></i><i></i><i></i></div>
+    <b>Icon Library</b>
+    <span class="ver" id="ver"></span>
+  </div>
+
+  <div class="search" id="searchWrap">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="q" type="text" autocomplete="off" spellcheck="false" placeholder="搜索名称 / id / 关键词">
+    <span class="hint"><kbd>/</kbd></span>
+    <button class="clear" id="clearQ" aria-label="清空搜索">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+
+  <div class="top-right">
+    <span class="spec" id="spec"></span>
+    <button class="iconbtn" id="theme" aria-label="切换深浅色">
+      <svg id="themeIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></svg>
+    </button>
+  </div>
+</header>
+
+<div class="layout">
+  <aside>
+    <div class="group">
+      <div class="glabel">浏览</div>
+      <button class="nav on" data-view="all">全部图标<em id="allCount"></em></button>
+      <button class="nav" data-view="sel">只看已选<em id="selCount">0</em></button>
+    </div>
+    <div class="group">
+      <div class="glabel">分类</div>
+      <div id="catList"></div>
+    </div>
+    <div class="aside-foot" id="asideFoot"></div>
+  </aside>
+
+  <main>
+    <div class="bar">
+      <h1 id="viewTitle">全部图标</h1>
+      <span class="meta" id="viewMeta"></span>
+      <div class="bar-right">
+        <div class="seg" id="tierSeg">
+          <button data-tier="all" class="on">全部</button>
+          <button data-tier="core">核心</button>
+          <button data-tier="extra">增补</button>
+        </div>
+        <button class="tbtn" id="selectAll">全选当前</button>
+        <button class="tbtn" id="selectNone">全不选</button>
+      </div>
+    </div>
+    <div id="content"></div>
+  </main>
+</div>
+
+<div class="selbar" id="selbar">
+  <div class="selinfo"><span>已选</span><b id="selN">0</b><span>枚</span></div>
+  <div class="divider"></div>
+  <div class="selacts">
+    <button class="btn primary" id="copyNums" hidden>复制选中编号</button>
+    <button class="btn" id="copyRest" hidden>复制未选编号</button>
+    <button class="btn primary" id="copyText">复制选中清单</button>
+    <button class="btn ghost hide-sm" id="copyJson">JSON</button>
+    <button class="btn" id="clearSel">清空</button>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const MANIFEST = __ICONLIB_MANIFEST__;
+const ICONS = __ICONLIB_ICONS__;
+
+const CATS = MANIFEST.categories;
+/* 编号：整批固定顺序，1 起。复制编号后按这个顺序即可还原成 id */
+const NUM = new Map(ICONS.map((ic, i) => [ic.id, i + 1]));
+if (MANIFEST.numbered) document.documentElement.classList.add("numbered");
+const BY_CAT = new Map(CATS.map(c => [c.id, c]));
+/* 待选批次页会带自己的 storageKey，避免和正式选型页串选 */
+const STORE = MANIFEST.storageKey || "iconlib.selection.v1";
+const TIER_LABEL = { all: "全部", core: "核心", extra: "增补" };
+
+const state = {
+  q: "",
+  cat: "all",
+  tier: "all",
+  view: "all",
+  sel: new Set(readSel()),
+};
+
+function readSel() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(STORE) || "[]");
+    return Array.isArray(raw) ? raw.filter(id => ICONS.some(i => i.id === id)) : [];
+  } catch { return []; }
+}
+function saveSel() {
+  localStorage.setItem(STORE, JSON.stringify([...state.sel]));
+}
+
+/* ── 搜索索引 ─────────────────────────────────────────────── */
+const INDEX = new Map(ICONS.map(i => [i.id, [
+  i.name, i.id, i.category, i.tier === "core" ? "核心" : "增补",
+  ...(i.keywords || []),
+].join(" ").toLowerCase()]));
+
+function matches(icon, tokens) {
+  const hay = INDEX.get(icon.id);
+  return tokens.every(t =>
+    // 1-2 个字母的英文词按词首匹配，避免 "ai" 命中 "email"
+    /^[a-z0-9]{1,2}$/.test(t) ? new RegExp("(^|[\\s])" + t + "($|[\\s])").test(hay) : hay.includes(t)
+  );
+}
+
+function filtered() {
+  const tokens = state.q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  return ICONS.filter(i => {
+    if (state.cat !== "all" && i.categoryId !== state.cat) return false;
+    if (state.tier !== "all" && i.tier !== state.tier) return false;
+    if (state.view === "sel" && !state.sel.has(i.id)) return false;
+    if (tokens.length && !matches(i, tokens)) return false;
+    return true;
+  });
+}
+
+/* ── 渲染 ─────────────────────────────────────────────────── */
+const $ = (s) => document.querySelector(s);
+const content = $("#content");
+
+function cardHtml(icon) {
+  return `<article class="card${state.sel.has(icon.id) ? " sel" : ""}" data-id="${icon.id}" role="checkbox" aria-checked="${state.sel.has(icon.id)}" tabindex="0" title="${icon.category} / ${icon.name} / ${icon.id}">
+    ${MANIFEST.numbered ? `<span class="num">${NUM.get(icon.id)}</span>` : ""}
+    <span class="tick"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+    <span class="acts">
+      <button class="act" data-act="copy" aria-label="复制 ${icon.id} 的 SVG" title="复制 SVG">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+      </button>
+      <button class="act" data-act="dl" aria-label="下载 SVG" title="下载 SVG">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M4 21h16"/></svg>
+      </button>
+    </span>
+    <span class="glyph">${icon.svg}</span>
+    <span class="meta"><span class="nm">${icon.name}</span><code>${icon.id}</code></span>
+  </article>`;
+}
+
+function groupHtml(list) {
+  const groups = new Map();
+  for (const icon of list) {
+    if (!groups.has(icon.categoryId)) groups.set(icon.categoryId, []);
+    groups.get(icon.categoryId).push(icon);
+  }
+  let html = "";
+  for (const [catId, icons] of groups) {
+    const cat = BY_CAT.get(catId);
+    html += `<section data-cat="${catId}">
+      <div class="cat-head"><h2>${cat.name}</h2><span>${icons.length}</span><div class="line"></div><p>${cat.desc}</p></div>
+      <div class="grid">${icons.map(cardHtml).join("")}</div>
+    </section>`;
+  }
+  return html;
+}
+
+function render() {
+  const list = filtered();
+  const split = state.cat === "all" && !state.q.trim() && state.view !== "sel";
+
+  $("#viewTitle").textContent = state.cat === "all" ? (state.view === "sel" ? "已选图标" : "全部图标") : BY_CAT.get(state.cat).name;
+  $("#viewMeta").textContent = `${list.length} / ${ICONS.length}`;
+
+  if (!list.length) {
+    content.innerHTML = `<div class="empty">
+      <b>${state.view === "sel" ? "还没有勾选任何图标" : "没有匹配的图标"}</b>
+      <span>${state.view === "sel" ? "在卡片左上角打钩，或点卡片任意位置" : "换个关键词，或清除筛选条件"}</span>
+      <button id="reset">${state.view === "sel" ? "去看全部图标" : "清除筛选"}</button>
+    </div>`;
+    return;
+  }
+
+  content.innerHTML = split
+    ? groupHtml(list)
+    : `<div class="cat-head" style="padding-top:20px"><h2>${state.q.trim() ? "搜索结果" : state.cat === "all" ? "已选图标" : BY_CAT.get(state.cat).name}</h2><span>${list.length}</span><div class="line"></div></div><div class="grid">${list.map(cardHtml).join("")}</div>`;
+
+  paintSelection();
+}
+
+function paintSelection() {
+  const n = state.sel.size;
+  $("#selN").textContent = n;
+  $("#selCount").textContent = n;
+  $("#selbar").classList.toggle("show", n > 0);
+  const selView = document.querySelector('.nav[data-view="sel"]');
+  selView.classList.toggle("has", n > 0);
+  $("#copyText").disabled = n === 0;
+  $("#copyJson").disabled = n === 0;
+  // 分类侧栏标记：该分类是否已有选中
+  for (const el of document.querySelectorAll("#catList .nav")) {
+    const cid = el.dataset.cat;
+    const has = [...state.sel].some(id => ICONS.find(i => i.id === id)?.categoryId === cid);
+    el.classList.toggle("has", has);
+  }
+}
+
+/* ── 侧栏 ─────────────────────────────────────────────────── */
+function renderSidebar() {
+  $("#allCount").textContent = ICONS.length;
+  $("#selCount").textContent = state.sel.size;
+  $("#catList").innerHTML = CATS.map(c =>
+    `<button class="nav" data-cat="${c.id}">${c.name}<em>${c.count}</em><span class="dot"></span></button>`
+  ).join("");
+  $("#ver").textContent = "v" + MANIFEST.version;
+  $("#spec").textContent = `24 · 2px · currentColor`;
+  $("#asideFoot").innerHTML = `${MANIFEST.source.package} ${MANIFEST.source.version} · ${MANIFEST.source.license}<br>${MANIFEST.counts.total} 枚 · ${MANIFEST.counts.categories} 分类<br>currentColor 随主题变化`;
+  syncNav();
+}
+
+function syncNav() {
+  for (const el of document.querySelectorAll("#catList .nav")) {
+    el.classList.toggle("on", state.cat === el.dataset.cat);
+  }
+  for (const el of document.querySelectorAll("[data-view]")) {
+    el.classList.toggle("on", el.dataset.view === state.view);
+  }
+}
+
+/* ── 选择 ─────────────────────────────────────────────────── */
+function toggle(id) {
+  if (state.sel.has(id)) state.sel.delete(id);
+  else state.sel.add(id);
+  saveSel();
+  const card = content.querySelector(`.card[data-id="${id}"]`);
+  if (card) {
+    card.classList.toggle("sel", state.sel.has(id));
+    card.setAttribute("aria-checked", String(state.sel.has(id)));
+  }
+  paintSelection();
+}
+
+function selectAllVisible() {
+  for (const icon of filtered()) state.sel.add(icon.id);
+  saveSel();
+  render();
+}
+
+function selectNone() {
+  state.sel.clear();
+  saveSel();
+  render();
+}
+
+/* ── 复制 / 下载 ──────────────────────────────────────────── */
+function prettySvg(svg) {
+  const open = svg.match(/^<svg ([^>]*)>/);
+  if (!open) return svg;
+  const attrs = open[1].match(/[\w:-]+="[^"]*"/g) || [];
+  const head = `<svg\n  ${attrs.join("\n  ")}>`;
+  const inner = svg.slice(open[0].length).replace(/></g, ">\n  <");
+  return head + "\n" + inner;
+}
+
+async function copy(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+  } catch {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand("copy");
+    ta.remove();
+  }
+}
+
+function selectedIcons() {
+  return ICONS.filter(i => state.sel.has(i.id));
+}
+
+function selectionText() {
+  return selectedIcons().map(i => `${i.category} / ${i.name} / ${i.id}`).join("\n");
+}
+
+function toast(msg) {
+  const el = $("#toast");
+  el.textContent = msg;
+  el.classList.add("show");
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => el.classList.remove("show"), 2200);
+}
+
+/* ── 事件 ─────────────────────────────────────────────────── */
+document.addEventListener("click", async (e) => {
+  const nav = e.target.closest(".nav");
+  if (nav) {
+    if (nav.dataset.view) {
+      state.view = nav.dataset.view;
+      state.cat = "all";
+    } else if (nav.dataset.cat) {
+      state.cat = state.cat === nav.dataset.cat ? "all" : nav.dataset.cat;
+      state.view = "all";
+    }
+    syncNav();
+    render();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    return;
+  }
+
+  const act = e.target.closest(".act");
+  if (act) {
+    const card = act.closest(".card");
+    const icon = ICONS.find(i => i.id === card.dataset.id);
+    if (act.dataset.act === "copy") {
+      await copy(prettySvg(icon.svg));
+      act.classList.add("done");
+      setTimeout(() => act.classList.remove("done"), 1200);
+      toast(`已复制 ${icon.id}.svg`);
+    } else {
+      const blob = new Blob([prettySvg(icon.svg) + "\n"], { type: "image/svg+xml" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = `${icon.id}.svg`;
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+      toast(`已下载 ${icon.id}.svg`);
+    }
+    return;
+  }
+
+  const card = e.target.closest(".card");
+  if (card) { toggle(card.dataset.id); return; }
+
+  if (e.target.id === "reset") {
+    state.q = "";
+    state.cat = "all";
+    state.tier = "all";
+    state.view = "all";
+    $("#q").value = "";
+    $("#searchWrap").classList.remove("has-value");
+    document.querySelectorAll("#tierSeg button").forEach(b => b.classList.toggle("on", b.dataset.tier === "all"));
+    syncNav();
+    render();
+  }
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.target.closest(".act")) return;
+  const card = e.target.closest(".card");
+  if (card && (e.key === " " || e.key === "Enter")) {
+    e.preventDefault();
+    toggle(card.dataset.id);
+    return;
+  }
+  if (e.key === "/" && !/^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName)) {
+    e.preventDefault();
+    $("#q").focus();
+  }
+  if (e.key === "Escape" && document.activeElement === $("#q")) {
+    $("#q").value = "";
+    $("#q").dispatchEvent(new Event("input"));
+    $("#q").blur();
+  }
+});
+
+let qt;
+$("#q").addEventListener("input", (e) => {
+  const v = e.target.value;
+  $("#searchWrap").classList.toggle("has-value", !!v);
+  clearTimeout(qt);
+  qt = setTimeout(() => { state.q = v; render(); }, 70);
+});
+
+$("#clearQ").addEventListener("click", () => {
+  $("#q").value = "";
+  $("#q").dispatchEvent(new Event("input"));
+  $("#q").focus();
+});
+
+$("#selectAll").addEventListener("click", () => {
+  const n = filtered().length;
+  selectAllVisible();
+  toast(`已选中当前 ${n} 枚`);
+});
+
+$("#selectNone").addEventListener("click", selectNone);
+
+$("#clearSel").addEventListener("click", () => {
+  selectNone();
+  toast("已清空选择");
+});
+
+$("#copyText").addEventListener("click", async () => {
+  const n = state.sel.size;
+  await copy(selectionText());
+  toast(`已复制 ${n} 行清单，粘贴即可`);
+});
+
+/* ── 编号模式：复制选中编号 / 复制未选编号 ───────────────────
+   编号 = 整批里的固定序号，贴一串数字就能精确还原成 id，比贴清单短得多。
+   「复制未选编号」是给反选用的：勾掉少数几个，直接抄未选的号。 */
+if (MANIFEST.numbered) {
+  $("#copyNums").hidden = false;
+  $("#copyRest").hidden = false;
+  $("#copyText").className = "btn ghost hide-sm";
+  const numsOf = (list) => list.map(ic => NUM.get(ic.id)).sort((a, b) => a - b);
+
+  $("#copyNums").addEventListener("click", async () => {
+    const ns = numsOf(selectedIcons());
+    if (!ns.length) return toast("还没选");
+    await copy(ns.join(","));
+    toast(`已复制 ${ns.length} 个编号`);
+  });
+
+  $("#copyRest").addEventListener("click", async () => {
+    const ns = numsOf(ICONS.filter(ic => !state.sel.has(ic.id)));
+    if (!ns.length) return toast("全部都选了");
+    await copy(ns.join(","));
+    toast(`已复制 ${ns.length} 个未选编号`);
+  });
+}
+
+$("#copyJson").addEventListener("click", async () => {
+  const data = selectedIcons().map(({ id, name, category, categoryId, tier }) => ({ id, name, category, categoryId, tier }));
+  await copy(JSON.stringify(data, null, 2));
+  toast(`已复制 ${data.length} 条 JSON`);
+});
+
+document.querySelectorAll("#tierSeg button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    state.tier = btn.dataset.tier;
+    document.querySelectorAll("#tierSeg button").forEach(b => b.classList.toggle("on", b === btn));
+    render();
+  });
+});
+
+/* ── 主题 ─────────────────────────────────────────────────── */
+const SUN = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>';
+const MOON = '<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>';
+
+function setTheme(t) {
+  document.documentElement.dataset.theme = t;
+  $("#themeIcon").innerHTML = t === "dark" ? SUN : MOON;
+  localStorage.setItem("iconlib.theme", t);
+}
+$("#theme").addEventListener("click", () => {
+  setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
+});
+setTheme(localStorage.getItem("iconlib.theme") || "light");
+
+/* ── 启动 ─────────────────────────────────────────────────── */
+renderSidebar();
+render();
+paintSelection();
+</script>
+</body>
+</html>
