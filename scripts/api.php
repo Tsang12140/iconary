@@ -2000,7 +2000,7 @@ if ($action === 'state') {
         'pending' => $pending,
         /* 下载 / 点赞次数：前端据此排序和展示 */
         'stats' => (object)$store['stats'],
-        /* 点赞 / 点踩：默认排序和「综合热度」都读它；喜欢的首发加成也加在这里 */
+        /* 点赞 / 点踩：默认排序和「综合热度」都读它 */
         'votes' => (object)$store['votes'],
         /* 标记对所有人公开，但前端只在管理员模式用它做筛选，不再据此置顶 */
         'prefs' => (object)$store['prefs'],
