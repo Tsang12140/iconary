@@ -303,6 +303,16 @@ function loadStore(): array
     }
     /* cats 只保留字符串，避免历史脏数据把 sql/数组塞进来 */
     $s['cats'] = array_values(array_filter($s['cats'], 'is_string'));
+    /* 旧版给「喜欢」的图标预置了赞和下载，属于假数据。带 boosts 的库只可能是那一版写的，
+       读到它时一次性把点赞 / 下载计数清零，之后正常累计真实数据。 */
+    if (!empty($s['boosts'])) {
+        $s['votes'] = [];
+        $s['stats'] = [];
+        $s['boosts'] = [];
+        saveStore($s);
+        /* 公开接口排序读的是明文快照，这里一起清掉 */
+        writeStatCache([]);
+    }
     return $s;
 }
 
@@ -2056,7 +2066,7 @@ if ($action === 'set') {
     ok([
         'updatedAt' => $store['updatedAt'],
         'prefs' => (object)$store['prefs'],
-        /* 带回加成后的计数，前端不用等下次刷新就能重新排 */
+        /* 带回最新计数，前端不用等下次刷新就能重新排 */
         'votes' => (object)$store['votes'],
         'stats' => (object)$store['stats'],
     ]);
