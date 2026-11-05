@@ -760,7 +760,7 @@ dl.meta dd{margin:0;word-break:break-word}
       <button class="sclear" id="qClear" type="button" title="清空搜索" aria-label="清空搜索" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
       <span class="kbd" id="qKbd">/</span>
     </div>
-    <button class="acctbtn" id="acct" title="点此退出 · 双击左上角 logo 可重新登录">
+    <button class="acctbtn" id="acct" title="点此登录管理员">
       <span id="acctTxt">登录</span>
       <span class="rolepill" id="acctRole" hidden>管理员</span>
     </button>
@@ -809,7 +809,7 @@ dl.meta dd{margin:0;word-break:break-word}
         <option value="vote">点赞最多</option>
         <option value="download">下载最多</option>
       </select>
-      <button class="tbtn" id="mngBtn" title="管理员设置：改名 / 分类 / 数据统计" hidden><svg class="gi-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>设置</button>
+      <button class="tbtn" id="mngBtn" title="管理员设置：改名 / 分类 / 数据统计" hidden><svg class="gi-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>管理</button>
       <button class="tbtn" id="reviewBtn" hidden><svg class="gi-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 22H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.706.706l3.588 3.588A2.4 2.4 0 0 1 20 8v6"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="m14 20 2 2 4-4"/></svg>待审 <span class="n" id="pendN">0</span></button>
       <button class="ghost" id="clearAll">重置筛选</button>
       <div class="seg" id="seg">
@@ -1193,9 +1193,9 @@ async function loadState(){
 }
 function setAcctUI(){
   const b = document.getElementById("acct"), t = document.getElementById("acctTxt"), rl = document.getElementById("acctRole");
-  b.hidden = !USER;                      // 未登录不占位：登录只走双击 logo
   b.classList.toggle("on", !!USER);
-  t.textContent = USER ? USER.name : "";
+  b.title = USER ? "点此退出" : "点此登录管理员";
+  t.textContent = USER ? USER.name : "登录";
   rl.hidden = !USER;
   if (USER) {
     rl.textContent = isAdmin() ? "管理员" : "成员";
@@ -2133,7 +2133,7 @@ document.querySelector(".brand").addEventListener("dblclick", e => {
 });
 document.getElementById("acct").addEventListener("click", () => {
   if (USER) logout();
-  else toast("双击左上角 logo 登录");
+  else openLogin();
 });
 /** 重新拉一次服务器状态并重绘（静态托管失败时保持匿名视图） */
 async function refresh(){
