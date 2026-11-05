@@ -932,7 +932,7 @@ dl.meta dd{margin:0;word-break:break-word}
       </div>
       <div id="setAdmin" hidden>
         <div class="setsep">管理员</div>
-        <button class="btn" id="setOpenMng">图标 / 分类 / 数据</button>
+        <button class="btn" id="setOpenMng">流量 / 图标 / 分类</button>
       </div>
     </div>
   </div>
@@ -990,7 +990,7 @@ dl.meta dd{margin:0;word-break:break-word}
   <div class="modal mng">
     <div class="mhead">
       <div style="min-width:0">
-        <h2>图标仓管理</h2>
+        <h2>流量与管理</h2>
         <div class="p" id="mngSub">—</div>
       </div>
       <button class="x" id="mngClose" title="关闭"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
@@ -998,7 +998,7 @@ dl.meta dd{margin:0;word-break:break-word}
     <div class="mngtabs">
       <button data-t="icons" class="on">图标：改名 / 别名 / 分类</button>
       <button data-t="cats">分类：分布 / 待归类</button>
-      <button data-t="stats">数据：访客 / 下载</button>
+      <button data-t="stats">流量：访客 / 下载</button>
     </div>
     <div class="mngbody" id="tabIcons">
       <div class="mngbar">
@@ -1218,7 +1218,7 @@ async function loadState(){
 function setAcctUI(){
   const b = document.getElementById("acct");
   b.classList.toggle("on", !!USER);
-  b.title = USER ? `设置 · 已登录 ${USER.name}` : "设置：登录 / 账户 / 管理";
+  b.title = isAdmin() ? "流量面板" : USER ? "账户设置" : "登录 / 设置";
 }
 function setAdminUI(){
   const pg = document.getElementById("projectGroup");
@@ -1286,6 +1286,10 @@ async function doSetLogin(){
     await loadState();
   } catch(e){ err.textContent = e.message; return; }
   setAcctUI(); setAdminUI(); renderRail(); render(); syncSet();
+  if (isAdmin()) {
+    document.getElementById("setOverlay").classList.remove("on");
+    openMng("stats");
+  }
   toast(`已登录：${USER.name}`);
 }
 async function logout(){
@@ -2139,14 +2143,17 @@ document.querySelector(".brand").addEventListener("dblclick", e => {
   e.preventDefault();
   openSet();
 });
-/* 齿轮只打开设置，不再一点就退出；退出选项在面板里 */
-document.getElementById("acct").addEventListener("click", openSet);
+/* 齿轮：管理员直接进流量面板，未登录或普通成员先看设置 */
+document.getElementById("acct").addEventListener("click", () => {
+  if (isAdmin()) openMng("stats");
+  else openSet();
+});
 document.getElementById("setClose").addEventListener("click", () => document.getElementById("setOverlay").classList.remove("on"));
 document.getElementById("setLogin").addEventListener("click", doSetLogin);
 document.getElementById("setLogout").addEventListener("click", async () => { await logout(); syncSet(); });
 document.getElementById("setOpenMng").addEventListener("click", () => {
   document.getElementById("setOverlay").classList.remove("on");
-  openMng("icons");
+  openMng("stats");
 });
 ["setUser","setPass"].forEach(id => {
   document.getElementById(id).addEventListener("keydown", e => { if (e.key === "Enter") doSetLogin(); });
@@ -2465,8 +2472,6 @@ function openMng(tab){
   if (!isAdmin()) return toast("点右上角齿轮登录管理员");
   document.getElementById("mngQ").value = MNG_Q;
   setMngTab(tab || "icons");
-  document.getElementById("mngSub").textContent =
-    `共 ${ALL.length} 个图标 · ${CATNAMES.length} 个固定分类${(catCounts().get(INBOX) || 0) ? ` · 待归类 ${catCounts().get(INBOX)} 个` : ""}`;
   renderMngIcons();
   renderCats();
   renderStats();
@@ -2478,6 +2483,9 @@ function setMngTab(t){
   document.getElementById("tabIcons").hidden = t !== "icons";
   document.getElementById("tabCats").hidden = t !== "cats";
   document.getElementById("tabStats").hidden = t !== "stats";
+  document.getElementById("mngSub").textContent = t === "stats"
+    ? "近 14 天访客 / 下载 · 全站累计"
+    : `共 ${ALL.length} 个图标 · ${CATNAMES.length} 个固定分类${(catCounts().get(INBOX) || 0) ? ` · 待归类 ${catCounts().get(INBOX)} 个` : ""}`;
 }
 function mngHits(){
   const q = MNG_Q.toLowerCase();
