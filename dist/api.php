@@ -1136,10 +1136,10 @@ function statCache(): array
 }
 
 /** data/.prefs.php：id => like|dislike|hide 的明文快照 */
-function prefMap(): array
+function prefMap(bool $fresh = false): array
 {
     static $c = null;
-    if ($c !== null) {
+    if (!$fresh && $c !== null) {
         return $c;
     }
     $c = [];
@@ -1163,6 +1163,7 @@ function syncPrefMap(array $prefs): void
     if (@file_put_contents($tmp, $code, LOCK_EX) !== false) {
         @rename($tmp, PREFS_FILE);
         @chmod(PREFS_FILE, 0640);
+        prefMap(true);
     }
 }
 
@@ -1173,6 +1174,19 @@ function blockedIds(): array
     foreach (prefMap() as $id => $st) {
         if ($st === 'dislike' || $st === 'hide') {
             $out[(string)$id] = true;
+        }
+    }
+    return $out;
+}
+
+/** 对外可见的图标：去掉管理员标成不喜欢 / 隐藏的 */
+function visibleIcons(): array
+{
+    $blocked = blockedIds();
+    $out = [];
+    foreach (publicIcons() as $id => $it) {
+        if (!isset($blocked[(string)$id])) {
+            $out[$id] = $it;
         }
     }
     return $out;
@@ -1498,7 +1512,7 @@ function analyticsSummary(array $store): array
 function catLine(): string
 {
     $n = [];
-    foreach (publicIcons() as $it) {
+    foreach (visibleIcons() as $it) {
         $n[$it['scene']] = ($n[$it['scene']] ?? 0) + 1;
     }
     $parts = [];
@@ -1546,7 +1560,7 @@ function promptDoc(): string
 TXT;
     return str_replace(
         ['{{BASE}}', '{{COUNT}}', '{{CATS}}'],
-        [baseUrl(), (string)count(publicIcons()), catLine()],
+        [baseUrl(), (string)count(visibleIcons()), catLine()],
         $tpl
     );
 }
@@ -1664,7 +1678,7 @@ curl -s -X POST "{{BASE}}/api.php" \
 MD;
     return str_replace(
         ['{{BASE}}', '{{COUNT}}', '{{CATS}}'],
-        [baseUrl(), (string)count(publicIcons()), catLine()],
+        [baseUrl(), (string)count(visibleIcons()), catLine()],
         $tpl
     );
 }
@@ -1695,7 +1709,7 @@ function llmsDoc(): string
 TXT;
     return str_replace(
         ['{{BASE}}', '{{COUNT}}', '{{CATS}}'],
-        [baseUrl(), (string)count(publicIcons()), catLine()],
+        [baseUrl(), (string)count(visibleIcons()), catLine()],
         $tpl
     );
 }
@@ -1767,7 +1781,8 @@ if ($action === 'svg') {
     corsOut();
     $id = (string)($_GET['id'] ?? '');
     $icons = publicIcons();
-    if ($id === '' || !isset($icons[$id]) || $icons[$id]['svg'] === '') {
+    $blocked = blockedIds();
+    if ($id === '' || isset($blocked[$id]) || !isset($icons[$id]) || $icons[$id]['svg'] === '') {
         http_response_code(404);
         header('Content-Type: text/plain; charset=utf-8');
         echo "没有这个 id：{$id}\n先搜：api.php?action=search&q=关键词\n";
@@ -1989,8 +2004,14 @@ if ($action === 'state') {
     }
     syncPrefMap($store['prefs']);
     $extras = [];
+    $blockedExtra = blockedIds();
     foreach (approvedSubmissions($store) as $s) {
-        $extras[] = publicExtra($s);
+        $x = publicExtra($s);
+        /* 已过审但被管理员标成不喜欢 / 隐藏的投稿，也不发给普通访客 */
+        if (!$realAdmin && isset($blockedExtra[(string)$x['id']])) {
+            continue;
+        }
+        $extras[] = $x;
     }
     $pending = [];
     if ($realAdmin) {

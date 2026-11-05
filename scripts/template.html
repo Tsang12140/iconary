@@ -1184,6 +1184,13 @@ function rebuildAll(){
   if (isAdmin() && PRIV.brands.length) {
     ALL = ALL.concat(PRIV.brands.map(it => Object.assign({}, it, RENAMES[it.id] || {})));
   }
+  /* 不喜欢 / 隐藏：管理员自己仍能看到并继续调整，其他人连列表里都不出现 */
+  if (!isAdmin()) {
+    ALL = ALL.filter(it => {
+      const st = PREFS[it.id];
+      return st !== "dislike" && st !== "hide";
+    });
+  }
   /* 入库先后：上传的排在内置之后，配合 at（过审时间）就能排出「最新/最早」 */
   ALL.forEach((it, i) => { it._seq = i; });
   const t = document.getElementById("total");
@@ -2820,7 +2827,7 @@ document.getElementById("total").textContent = ALL.length;
 renderSwatches();
 setAcctUI(); setAdminUI();
 renderRail();
-render();
+/* 首屏先等 state 回来再画，避免被隐藏的图标先闪一下 */
 refresh();
 
 </script>
