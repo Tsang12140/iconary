@@ -1629,9 +1629,9 @@ function openCtx(it, x, y){
   const st = isAdmin() ? (PREFS[it.id] || null) : null;
   /* 普通用户右键只有「打开详情」：喜欢 / 不喜欢 / 隐藏是管理员的私有标记 */
   const items = isAdmin() ? [
-    ["like","喜欢"],
-    ["dislike","不喜欢"],
-    ["hide","隐藏 · 不进 AI 挑选"]
+    ["like","喜欢 · 仅自己可见"],
+    ["dislike","不喜欢 · 不对外展示"],
+    ["hide","隐藏 · 访客和 AI 都看不到"]
   ] : [];
   ctx.innerHTML = "";
   items.forEach(([v, label]) => {
