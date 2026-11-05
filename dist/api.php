@@ -2066,7 +2066,7 @@ if ($action === 'set') {
     ok([
         'updatedAt' => $store['updatedAt'],
         'prefs' => (object)$store['prefs'],
-        /* 带回加成后的计数，前端不用等下次刷新就能重新排 */
+        /* 带回最新计数，前端不用等下次刷新就能重新排 */
         'votes' => (object)$store['votes'],
         'stats' => (object)$store['stats'],
     ]);

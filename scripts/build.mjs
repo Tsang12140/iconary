@@ -9,6 +9,7 @@ const SRC = path.join(ROOT, "data", "icons.json");
 const OUT_DIR = path.join(ROOT, "dist");
 const TPL = path.join(ROOT, "scripts", "template.html");
 const ENV_SRC = path.join(ROOT, "scripts", ".env");
+const OG_SRC = path.join(ROOT, "docs", "og-cover.png");
 
 /* 别名 = 人工整理的中英文搜索词（scripts/aliases.json），没有就用 slug + 标签兜底 */
 const ALIAS_FILE = path.join(ROOT, "scripts", "aliases.json");
@@ -152,6 +153,10 @@ if (fs.existsSync(ENV_SRC)) {
 }
 /* Apache 下自动挡掉 .env；Nginx（宝塔默认）不吃这个，仍需在站点配置里加等效规则，见「读我.md」 */
 fs.copyFileSync(path.join(ROOT, "scripts", "htaccess.txt"), path.join(OUT_DIR, ".htaccess"));
+/* 分享链接的预览封面（docs/og-cover.png），构建时一起带上；没有就跳过，不影响站点 */
+if (fs.existsSync(OG_SRC)) {
+  fs.copyFileSync(OG_SRC, path.join(OUT_DIR, "og-cover.png"));
+}
 
 
 /* ── 单个 SVG 文件（只写公开图标） ── */
