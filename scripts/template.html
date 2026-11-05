@@ -202,73 +202,6 @@ aside.rail::-webkit-scrollbar-thumb:hover{background:color-mix(in srgb,var(--acc
 }
 .ghost:hover{border-color:var(--accent);color:var(--accent)}
 
-/* ── 首屏 ── */
-.hero{
-  position:relative;display:grid;grid-template-columns:minmax(0,1fr) 276px;gap:24px;align-items:center;
-  padding:22px 24px;margin-bottom:14px;overflow:hidden;
-  border:1px solid var(--line);border-radius:var(--radius);
-  background:
-    radial-gradient(520px 250px at 90% -20%, color-mix(in srgb,var(--accent-soft) 90%,transparent), transparent 72%),
-    radial-gradient(340px 190px at 4% 130%, color-mix(in srgb,#e3a9a0 14%,transparent), transparent 70%),
-    var(--panel);
-  box-shadow:0 1px 2px rgba(23,32,26,.035);
-}
-.hero-copy{min-width:0}
-.hero .eyebrow{
-  margin:0 0 7px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--accent);font-weight:700;
-}
-.hero h2{
-  margin:0 0 9px;font-size:25px;line-height:1.22;letter-spacing:-.015em;font-weight:700;
-}
-.hero h2 em{font-style:normal;color:var(--accent)}
-.hero-sub{
-  margin:0 0 15px;max-width:580px;color:var(--muted);font-size:12.5px;line-height:1.78;
-}
-.hero-sub b{color:var(--ink);font-weight:600}
-.hero-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.hero-actions .btn{height:36px;padding:0 16px;font-size:12.5px}
-.hero-actions .lnk{
-  font-size:12px;color:var(--accent);padding:6px 4px;border-radius:6px;
-}
-.hero-actions .lnk:hover{text-decoration:underline}
-.hero-actions .lnk svg{width:12px;height:12px;display:inline-block;vertical-align:-2px;margin-left:3px}
-.demoqueries{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:13px}
-.demoqueries .dq-label{font-size:10.5px;color:var(--muted);letter-spacing:.06em;margin-right:2px}
-.demoqueries button{
-  padding:3px 9px;font-size:11px;line-height:1.5;color:var(--ink);
-  border:1px solid var(--line);border-radius:999px;background:transparent;transition:.14s;
-}
-.demoqueries button:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
-.hero-demo{
-  min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:12px;
-  background:var(--panel);box-shadow:0 12px 28px -22px rgba(23,32,26,.5);
-}
-.hd-bar{
-  display:flex;align-items:center;gap:5px;padding:8px 10px;
-  border-bottom:1px solid var(--line);background:var(--panel-2);
-}
-.hd-dot{width:7px;height:7px;border-radius:50%;background:var(--line-strong)}
-.hd-bar b{
-  margin-left:auto;font-size:9.5px;font-weight:600;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--muted);
-}
-.hd-line{
-  display:flex;align-items:center;gap:6px;padding:10px 12px 8px;
-  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10.5px;color:var(--muted);
-}
-.hd-line .p{color:var(--accent);font-weight:700}
-.hd-line b{color:var(--ink);background:var(--accent-soft);border-radius:5px;padding:1px 6px;font-weight:600}
-.hd-res{display:flex;flex-direction:column;gap:4px;padding:0 8px 8px}
-.hd-item{display:flex;align-items:center;gap:8px;padding:6px 7px;border-radius:8px;background:var(--panel-2)}
-.hd-item svg{width:17px;height:17px;flex:none;color:var(--accent)}
-.hd-item .nm{font-size:11.5px;font-weight:600;color:var(--ink)}
-.hd-item .sc{font-size:9.5px;color:var(--muted);margin-left:auto;white-space:nowrap}
-.hd-foot{
-  padding:6px 12px 8px;border-top:1px solid var(--line);
-  font-size:9.5px;color:var(--muted);letter-spacing:.02em;
-}
-
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:12px}
 .card{
   position:relative;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
@@ -769,8 +702,6 @@ dl.meta dd{margin:0;word-break:break-word}
   .brand{flex:1 1 auto}
   .search{order:10;flex:1 1 100%;max-width:none;margin-left:0;height:40px}
   .search:focus-within{max-width:none}
-  .hero{grid-template-columns:1fr;gap:0}
-  .hero-demo{display:none}
 }
 @media (max-width:780px){
   main{grid-template-columns:1fr;gap:16px;padding:14px 14px 48px}
@@ -802,12 +733,6 @@ dl.meta dd{margin:0;word-break:break-word}
   .stkpis{grid-template-columns:repeat(2,minmax(0,1fr))}
   .stgrid2{grid-template-columns:1fr}
   footer{padding:0 14px 32px}
-  .hero{padding:17px 15px;margin-bottom:12px}
-  .hero h2{font-size:21px}
-  .hero-sub{font-size:12px;line-height:1.7}
-  .hero-actions .btn{height:34px;padding:0 13px}
-  .demoqueries{gap:5px;margin-top:11px}
-  .demoqueries button{font-size:10.5px;padding:2px 8px}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -875,54 +800,6 @@ dl.meta dd{margin:0;word-break:break-word}
   </aside>
 
   <section class="content">
-    <section class="hero" aria-label="Iconary 简介">
-      <div class="hero-copy">
-        <p class="eyebrow">Iconary / 图标仓</p>
-        <h2>给 AI 用的图标，<em>人工筛过。</em></h2>
-        <p class="hero-sub"><b>__COUNT__</b> 枚 24×24 线性 SVG，中文名、别名、<b>__SCENES__</b> 类场景一次搜到；免登录接口，agent 可直接取源码。</p>
-        <div class="hero-actions">
-          <button class="btn primary" id="heroAgent" type="button">
-            <svg class="gi-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
-            复制给 AI
-          </button>
-          <button class="lnk" id="heroSkill" type="button">装成 skill<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
-        </div>
-        <div class="demoqueries" aria-label="中文搜索示例">
-          <span class="dq-label">中文也能搜</span>
-          <button type="button" data-q="删除">删除</button>
-          <button type="button" data-q="设置">设置</button>
-          <button type="button" data-q="上传">上传</button>
-          <button type="button" data-q="下载">下载</button>
-          <button type="button" data-q="搜索">搜索</button>
-          <button type="button" data-q="分享">分享</button>
-          <button type="button" data-q="通知">通知</button>
-          <button type="button" data-q="日历">日历</button>
-          <button type="button" data-q="报表">报表</button>
-          <button type="button" data-q="文件夹">文件夹</button>
-          <button type="button" data-q="指纹">指纹</button>
-          <button type="button" data-q="夜间模式">夜间模式</button>
-        </div>
-      </div>
-      <div class="hero-demo" aria-hidden="true">
-        <div class="hd-bar"><span class="hd-dot"></span><span class="hd-dot"></span><span class="hd-dot"></span><b>agent</b></div>
-        <div class="hd-line"><span class="p">$</span><span>搜</span><b>删除</b><span>图标</span></div>
-        <div class="hd-res">
-          <div class="hd-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M10 11v6"/><path d="M14 11v6"/></svg>
-            <span class="nm">删除</span><span class="sc">基础操作</span>
-          </div>
-          <div class="hd-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
-            <span class="nm">设置</span><span class="sc">页面导航</span>
-          </div>
-          <div class="hd-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m17 8-5-5-5 5"/><path d="M12 3v12"/></svg>
-            <span class="nm">上传</span><span class="sc">基础操作</span>
-          </div>
-        </div>
-        <div class="hd-foot">免登录 · CORS · currentColor</div>
-      </div>
-    </section>
     <div class="toolbar">
       <div class="count"><b id="shown">0</b> / <span id="total">0</span> 个图标</div>
       <select id="sortSel" class="sortsel" title="排序方式">
@@ -1697,7 +1574,6 @@ function render(){
       : `${it.scene || INBOX} · ${it.origin === "open-source" ? "开源" : "自有"}`;
     const up = (VOTES[it.id] || {}).up || 0;
     const liked = mv[it.id] === "up";
-    card.title = it.name + (it.alias ? " · " + it.alias : "") + (isAdmin() ? " · 右键标记" : "");
     card.innerHTML = `<div class="pin"></div><div class="ico">${it.svg}</div>
       <div class="nm">${esc(it.name)}</div>
       ${it.alias ? `<div class="al">${esc(it.alias)}</div>` : ""}
@@ -2219,36 +2095,6 @@ qEl.addEventListener("input", e => {
 });
 qClear.addEventListener("click", () => {
   qEl.value = ""; S.q = ""; syncSearchBox(); render(); qEl.focus();
-});
-document.getElementById("heroAgent").addEventListener("click", async e => {
-  const btn = e.currentTarget;
-  if (!agOnline()) return agOpen();
-  const html = btn.innerHTML;
-  btn.disabled = true;
-  btn.textContent = "复制中…";
-  try {
-    copy(await agDoc("prompt"), "提示词已复制，去粘给 agent");
-  } catch {
-    agOpen();
-  } finally {
-    btn.disabled = false;
-    btn.innerHTML = html;
-  }
-});
-document.getElementById("heroSkill").addEventListener("click", () => {
-  agOpen();
-  agSetTab("skill");
-  if (agOnline() && !AG_DOC.skill) agDoc("skill").then(agDrawSkill).catch(() => {});
-});
-document.querySelectorAll(".demoqueries [data-q]").forEach(b => {
-  b.addEventListener("click", () => {
-    const q = b.dataset.q || "";
-    qEl.value = q;
-    S.q = q;
-    syncSearchBox();
-    render();
-    qEl.focus({ preventScroll: true });
-  });
 });
 document.getElementById("sortSel").addEventListener("change", e => {
   S.sort = e.target.value;
