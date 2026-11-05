@@ -335,16 +335,30 @@ aside.rail::-webkit-scrollbar-thumb:hover{background:color-mix(in srgb,var(--acc
 .votebar .chip.down.on{background:#8b3a3a;border-color:#8b3a3a}
 [data-theme="dark"] .votebar .chip.down.on{background:#a45454;border-color:#a45454}
 
-/* ── 账号 / 角色 ── */
+/* ── 账号 / 设置 ── */
 .acctbtn{
-  height:38px;padding:0 13px;border-radius:999px;border:1px solid var(--line-strong);background:var(--panel);
-  display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);flex:none;
+  width:38px;height:38px;padding:0;border-radius:999px;border:1px solid var(--line-strong);background:var(--panel);
+  display:grid;place-items:center;color:var(--muted);flex:none;
 }
 .acctbtn:hover{border-color:var(--accent);color:var(--accent)}
 .acctbtn.on{color:var(--accent);border-color:var(--accent)}
 .acctbtn[hidden]{display:none}
-.rolepill{font-size:10px;letter-spacing:.06em;padding:1px 6px;border-radius:4px;background:var(--accent);color:#fff}
-.rolepill.member{background:var(--accent-soft);color:var(--accent)}
+/* 设置面板：账户与管理员入口都在这里，点名字不会退出 */
+.setbox{width:min(400px,100%)}
+.setbox .shead{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.setbox .shead h2{margin:0;font-size:14.5px}
+.setbox .x{
+  width:26px;height:26px;border-radius:50%;display:grid;place-items:center;
+  border:1px solid var(--line);background:var(--panel);color:var(--muted);
+}
+.setbox .x:hover{border-color:var(--accent);color:var(--accent)}
+.setbody{display:flex;flex-direction:column;gap:12px}
+.setbody .field input{letter-spacing:normal}
+.setbody #setGuest,.setbody #setMine,.setbody #setAdmin{display:flex;flex-direction:column;gap:10px}
+.setwho{display:flex;align-items:center;gap:8px;font-size:13px}
+.setwho b{font-weight:600}
+.setrole{font-size:10px;letter-spacing:.06em;padding:1px 6px;border-radius:4px;background:var(--accent-soft);color:var(--accent)}
+.setsep{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
 
 /* ── 工具栏按钮 ── */
 .tbtn{
@@ -716,7 +730,7 @@ dl.meta dd{margin:0;word-break:break-word}
   .fgroup h3 .reset{display:none}
   .chips{flex-wrap:nowrap}
   .hwrap{padding:10px 14px}
-  .acctbtn{height:34px;padding:0 10px}
+  .acctbtn{width:34px;height:34px}
   .iconbtn{width:34px;height:34px}
   .starbtn{height:34px;padding:0 9px 0 8px}
   .starbtn .lbl{display:none}
@@ -760,9 +774,8 @@ dl.meta dd{margin:0;word-break:break-word}
       <button class="sclear" id="qClear" type="button" title="清空搜索" aria-label="清空搜索" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
       <span class="kbd" id="qKbd">/</span>
     </div>
-    <button class="acctbtn" id="acct" title="点此登录管理员">
-      <span id="acctTxt">登录</span>
-      <span class="rolepill" id="acctRole" hidden>管理员</span>
+    <button class="acctbtn" id="acct" title="设置：登录 / 账户 / 管理" aria-label="设置">
+      <svg class="gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
     </button>
     <button class="tbtn" id="agentBtn" title="给 AI 用：复制一段话，或把整个图标库装成 skill">
       <svg class="gi-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg><span class="lbl">给 AI 用</span>
@@ -809,7 +822,6 @@ dl.meta dd{margin:0;word-break:break-word}
         <option value="vote">点赞最多</option>
         <option value="download">下载最多</option>
       </select>
-      <button class="tbtn" id="mngBtn" title="管理员设置：改名 / 分类 / 数据统计" hidden><svg class="gi-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>管理</button>
       <button class="tbtn" id="reviewBtn" hidden><svg class="gi-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 22H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.706.706l3.588 3.588A2.4 2.4 0 0 1 20 8v6"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="m14 20 2 2 4-4"/></svg>待审 <span class="n" id="pendN">0</span></button>
       <button class="ghost" id="clearAll">重置筛选</button>
       <div class="seg" id="seg">
@@ -901,15 +913,27 @@ dl.meta dd{margin:0;word-break:break-word}
   </div>
 </div>
 
-<div class="overlay" id="loginOverlay">
-  <div class="pwd">
-    <h2>登录图标仓</h2>
-    <div class="field"><label>用户名</label><input id="lgUser" autocomplete="username"></div>
-    <div class="field"><label>密码</label><input id="lgPass" type="password" autocomplete="current-password"></div>
-    <div class="perr" id="lgErr"></div>
-    <div class="prow">
-      <button class="btn" id="lgCancel">取消</button>
-      <button class="btn primary" id="lgOk">登录</button>
+<div class="overlay" id="setOverlay">
+  <div class="pwd setbox">
+    <div class="shead">
+      <h2>设置</h2>
+      <button class="x" id="setClose" title="关闭"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+    </div>
+    <div class="setbody">
+      <div id="setGuest">
+        <div class="field"><label>账号</label><input id="setUser" autocomplete="username" placeholder="管理员账号"></div>
+        <div class="field"><label>密码</label><input id="setPass" type="password" autocomplete="current-password"></div>
+        <div class="perr" id="setErr"></div>
+        <button class="btn primary" id="setLogin">登录</button>
+      </div>
+      <div id="setMine" hidden>
+        <div class="setwho"><b id="setName">—</b><span class="setrole" id="setRole">管理员</span></div>
+        <button class="btn" id="setLogout">退出登录</button>
+      </div>
+      <div id="setAdmin" hidden>
+        <div class="setsep">管理员</div>
+        <button class="btn" id="setOpenMng">图标 / 分类 / 数据</button>
+      </div>
     </div>
   </div>
 </div>
@@ -1192,15 +1216,9 @@ async function loadState(){
   rebuildAll();
 }
 function setAcctUI(){
-  const b = document.getElementById("acct"), t = document.getElementById("acctTxt"), rl = document.getElementById("acctRole");
+  const b = document.getElementById("acct");
   b.classList.toggle("on", !!USER);
-  b.title = USER ? "点此退出" : "点此登录管理员";
-  t.textContent = USER ? USER.name : "登录";
-  rl.hidden = !USER;
-  if (USER) {
-    rl.textContent = isAdmin() ? "管理员" : "成员";
-    rl.className = "rolepill" + (isAdmin() ? "" : " member");
-  }
+  b.title = USER ? `设置 · 已登录 ${USER.name}` : "设置：登录 / 账户 / 管理";
 }
 function setAdminUI(){
   const pg = document.getElementById("projectGroup");
@@ -1210,7 +1228,6 @@ function setAdminUI(){
   document.querySelector('.fgroup[data-k="pref"]').hidden = !isAdmin();
   if (!isAdmin() && S.pref) S.pref = null;
   document.getElementById("reviewBtn").hidden = !isAdmin();
-  document.getElementById("mngBtn").hidden = !isAdmin();
   document.getElementById("catMngBtn").hidden = !isAdmin();
   document.getElementById("pendN").textContent = PENDING.length;
 }
@@ -1235,44 +1252,41 @@ function apiPost(payload){
     body: JSON.stringify(body)
   });
 }
-/* ── 登录 ── */
-function openLogin(){
-  return new Promise(resolve => {
-    const ov = document.getElementById("loginOverlay");
-    const u = document.getElementById("lgUser");
-    const p = document.getElementById("lgPass");
-    const err = document.getElementById("lgErr");
-    const btnOk = document.getElementById("lgOk");
-    const btnCancel = document.getElementById("lgCancel");
-    err.textContent = ""; p.value = "";
-    ov.classList.add("on");
-    const done = v => {
-      ov.classList.remove("on");
-      btnOk.onclick = null; btnCancel.onclick = null;
-      u.onkeydown = null; p.onkeydown = null;
-      resolve(v);
-    };
-    const submit = async () => {
-      const user = u.value.trim(), pass = p.value;
-      if (!user || !pass) { err.textContent = "用户名和密码都要填"; return; }
-      err.textContent = "";
-      const r = await apiPost({ action:"login", user, pass });
-      if (!r.ok) { err.textContent = r.error || "登录失败"; return; }
-      TOKEN = r.token;
-      localStorage.setItem(TOK_KEY, TOKEN);
-      try {
-        await loadState();
-      } catch(e){ err.textContent = e.message; return; }
-      setAcctUI(); setAdminUI(); renderRail(); render();
-      done(true);
-      toast(`已登录：${USER.name}`);
-    };
-    btnOk.onclick = submit;
-    btnCancel.onclick = () => done(false);
-    u.onkeydown = e => { if (e.key === "Enter") submit(); };
-    p.onkeydown = e => { if (e.key === "Enter") submit(); };
-    setTimeout(() => u.focus(), 30);
-  });
+/* ── 设置面板：账户 / 登录 / 管理员入口 ── */
+function syncSet(){
+  const guest = document.getElementById("setGuest");
+  const mine = document.getElementById("setMine");
+  const adm = document.getElementById("setAdmin");
+  guest.hidden = !!USER;
+  mine.hidden = !USER;
+  adm.hidden = !isAdmin();
+  if (USER) {
+    document.getElementById("setName").textContent = USER.name;
+    document.getElementById("setRole").textContent = isAdmin() ? "管理员" : "成员";
+  }
+}
+function openSet(){
+  document.getElementById("setErr").textContent = "";
+  syncSet();
+  document.getElementById("setOverlay").classList.add("on");
+  if (!USER) setTimeout(() => document.getElementById("setUser").focus(), 30);
+}
+async function doSetLogin(){
+  const u = document.getElementById("setUser");
+  const p = document.getElementById("setPass");
+  const err = document.getElementById("setErr");
+  const user = u.value.trim(), pass = p.value;
+  if (!user || !pass) { err.textContent = "账号和密码都要填"; return; }
+  err.textContent = "";
+  const r = await apiPost({ action:"login", user, pass });
+  if (!r.ok) { err.textContent = r.error || "登录失败"; return; }
+  TOKEN = r.token;
+  localStorage.setItem(TOK_KEY, TOKEN);
+  try {
+    await loadState();
+  } catch(e){ err.textContent = e.message; return; }
+  setAcctUI(); setAdminUI(); renderRail(); render(); syncSet();
+  toast(`已登录：${USER.name}`);
 }
 async function logout(){
   TOKEN = "";
@@ -1286,12 +1300,7 @@ async function logout(){
 /* ── 标记读写 ── */
 async function setPref(id, state){
   if (!isAdmin()) return;
-  if (!USER) {
-    toast("双击左上角 logo 登录后才能标记");
-    await openLogin();
-    if (!USER) return;
-    renderRail(); render();
-  }
+  if (!USER) { openSet(); return toast("先登录再标记"); }
   const next = state && PREFS[id] === state ? null : state;
   const r = await apiPost({ action:"set", id, state:next });
   if (!r.ok) {
@@ -2049,7 +2058,7 @@ document.querySelectorAll(".overlay").forEach(o => {
 document.addEventListener("keydown", e => {
   if (e.key === "Escape") {
     closeCtx(); closeDetail();
-    if (document.getElementById("loginOverlay").classList.contains("on")) document.getElementById("lgCancel").click();
+    document.getElementById("setOverlay").classList.remove("on");
     document.getElementById("upOverlay").classList.remove("on");
     document.getElementById("revOverlay").classList.remove("on");
     document.getElementById("mngOverlay").classList.remove("on");
@@ -2128,12 +2137,19 @@ function track(id, op){
 /* ── 账号入口：双击左上角 logo ── */
 document.querySelector(".brand").addEventListener("dblclick", e => {
   e.preventDefault();
-  if (USER) return toast(`已登录：${USER.name}`);
-  openLogin();
+  openSet();
 });
-document.getElementById("acct").addEventListener("click", () => {
-  if (USER) logout();
-  else openLogin();
+/* 齿轮只打开设置，不再一点就退出；退出选项在面板里 */
+document.getElementById("acct").addEventListener("click", openSet);
+document.getElementById("setClose").addEventListener("click", () => document.getElementById("setOverlay").classList.remove("on"));
+document.getElementById("setLogin").addEventListener("click", doSetLogin);
+document.getElementById("setLogout").addEventListener("click", async () => { await logout(); syncSet(); });
+document.getElementById("setOpenMng").addEventListener("click", () => {
+  document.getElementById("setOverlay").classList.remove("on");
+  openMng("icons");
+});
+["setUser","setPass"].forEach(id => {
+  document.getElementById(id).addEventListener("keydown", e => { if (e.key === "Enter") doSetLogin(); });
 });
 /** 重新拉一次服务器状态并重绘（静态托管失败时保持匿名视图） */
 async function refresh(){
@@ -2412,12 +2428,11 @@ document.getElementById("reviewBtn").addEventListener("click", () => {
   document.getElementById("revOverlay").classList.add("on");
 });
 document.getElementById("revClose").addEventListener("click", () => document.getElementById("revOverlay").classList.remove("on"));
-["loginOverlay","upOverlay","revOverlay"].forEach(id => {
+["setOverlay","upOverlay","revOverlay"].forEach(id => {
   const ov = document.getElementById(id);
   ov.addEventListener("click", e => {
     if (e.target !== ov) return;
-    if (id === "loginOverlay") document.getElementById("lgCancel").click();
-    else ov.classList.remove("on");
+    ov.classList.remove("on");
   });
 });
 
@@ -2447,7 +2462,7 @@ document.getElementById("edSave").addEventListener("click", async () => {
 let MNG_Q = "", MNG_LIMIT = 40;
 
 function openMng(tab){
-  if (!isAdmin()) return toast("先双击左上角 logo 登录管理员");
+  if (!isAdmin()) return toast("点右上角齿轮登录管理员");
   document.getElementById("mngQ").value = MNG_Q;
   setMngTab(tab || "icons");
   document.getElementById("mngSub").textContent =
@@ -2682,7 +2697,6 @@ function renderStats(){
   }
 }
 
-document.getElementById("mngBtn").addEventListener("click", () => openMng("icons"));
 document.getElementById("catMngBtn").addEventListener("click", () => openMng("cats"));
 document.getElementById("mngClose").addEventListener("click", () => document.getElementById("mngOverlay").classList.remove("on"));
 document.querySelectorAll(".mngtabs button").forEach(b => {
