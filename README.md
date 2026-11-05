@@ -27,21 +27,31 @@
 
 ## 快速开始
 
+`dist/` 已经构建好并入库，服务器上直接 `git pull` 就能更新，不需要装 Node：
+
 ```bash
-# 1. 构建站点（产出 dist/）
-npm run build:site
-
-# 2. 准备账号配置
-cp scripts/.env.example scripts/.env
-#    编辑 ADMIN_USER / ADMIN_PASS / SESSION_SECRET / ADMIN_AI_KEY
-
-# 3. 部署
-#    把整个 dist/ 放到宝塔 / Apache / nginx 的站点根目录
+git fetch origin main
+git reset --hard origin/main
 ```
 
+然后把 `dist/` 里的文件同步到站点根目录（或在宝塔里把站点根目录直接指向 `dist/`）。首次部署时再准备账号配置：
+
+```bash
+cp scripts/.env.example dist/.env
+# 编辑 ADMIN_USER / ADMIN_PASS / SESSION_SECRET / ADMIN_AI_KEY
+```
+
+- `dist/.env` 不入库，也不会被 `git pull` 覆盖，放在服务器上即可。
 - 首次访问时 `api.php` 会自己创建 `data/library.enc`。
 - 一定要把 `.env` 挡在 Web 访问之外：它含明文密码和加密密钥。
 - 只想看界面：直接打开 `dist/index.html`，不需要 PHP；上传、点赞、审核会不可用。
+
+改源码后重新构建并提交：
+
+```bash
+npm run build:site
+git add dist && git commit -m "build: 更新部署包" && git push
+```
 
 ## 目录
 
@@ -55,7 +65,7 @@ scripts/
   icon-agent.mjs    命令行助手（用 .env 的管理员账号操作线上站点）
 IconLibrary/        统一规格图标库（Lucide，ISC）
 data/icons.json     项目收集的图标源
-dist/               构建产物（不入库）
+dist/               已构建的部署包（入库，可直接上线）
 ```
 
 ## 接口速查

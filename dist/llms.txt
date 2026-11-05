@@ -1,0 +1,21 @@
+# Iconary · 图标仓
+
+> 920 枚 24×24 线性 SVG 图标，中文 / 英文关键词都能搜。只读公开接口，无需登录，带 CORS。
+
+## 装成 skill
+
+本站本身就是一个 skill：./skills/icon-library/（同一份内容也在 ./api.php?action=skill）。
+存进你所用的 agent 的 skill 目录即装好；不确定路径时问用户，比猜快。
+
+## 接口
+
+- 搜索：./api.php?action=search&q=删除&limit=8
+- 取 SVG：./api.php?action=svg&id=trash
+- 全量清单：./api.php?action=catalog
+- 装成 skill：./skills/icon-library/（完整用法，装 skill 就是存这个文件）
+- 短提示词：./api.php?action=prompt
+- 给人看的网页：./
+
+## 分类
+
+基础操作 108 · 页面导航 69 · 人际沟通 75 · AI 自动化 43 · 数据统计 67 · 商业金融 112 · 文件知识 80 · 媒体创作 59 · 开发技术 65 · 时间任务 36 · 地图出行 40 · 生活服务 111 · 状态反馈 55

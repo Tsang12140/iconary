@@ -10,8 +10,8 @@ data/.stats.php
 data/.public.php
 data/.throttle.json
 
-# 构建产物
-dist/
+# 部署包 dist/ 入库，宝塔可以直接 git pull；只挡掉服务器上的账号配置
+dist/.env
 main-site-root/
 
 # 数据整理的中间文件，只保留构建需要的图标源
