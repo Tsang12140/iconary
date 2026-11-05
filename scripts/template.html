@@ -31,7 +31,7 @@
 :root{
   --bg:#f3f5f0; --panel:#ffffff; --panel-2:#f5f7f2; --ink:#17201a; --muted:#717a71;
   --line:#e2e6dc; --line-strong:#ccd3c6; --accent:#2f6b50; --accent-ink:#24513c;
-  --accent-soft:#e7f0e9; --chart-2:#6f9fa2;
+  --accent-soft:#e7f0e9; --chart-2:#f26b00; --chart-human:#1f6feb;
   --shadow:0 1px 2px rgba(23,32,26,.05),0 14px 30px -18px rgba(23,32,26,.28);
   --code-bg:#1e1e1e; --code-tag:#569cd6; --code-key:#9cdcfe; --code-str:#ce9178; --code-txt:#d4d4d4;
   --radius:14px; --icon-size:36px;
@@ -39,7 +39,7 @@
 [data-theme="dark"]{
   --bg:#111510; --panel:#1a201a; --panel-2:#20271f; --ink:#e9eee6; --muted:#949d92;
   --line:#2b332a; --line-strong:#3b453a; --accent:#8fceb0; --accent-ink:#d5eddf;
-  --accent-soft:#22352a; --chart-2:#8fc4c6;
+  --accent-soft:#22352a; --chart-2:#ff9a3c; --chart-human:#5b9dff;
   --shadow:0 1px 2px rgba(0,0,0,.35),0 16px 36px -18px rgba(0,0,0,.7);
 }
 *{box-sizing:border-box}
@@ -510,9 +510,17 @@ aside.rail::-webkit-scrollbar-thumb:hover{background:color-mix(in srgb,var(--acc
 .mngbody.stats{overflow:auto;gap:12px}
 .stkpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
 .stkpi{
-  border:1px solid var(--line);background:var(--panel-2);border-radius:11px;padding:11px 12px;
+  position:relative;border:1px solid var(--line);background:var(--panel-2);border-radius:11px;padding:11px 12px 11px 16px;
   display:flex;flex-direction:column;gap:2px;min-width:0;
 }
+.stkpi::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:11px 0 0 11px;
+  background:var(--line-strong);
+}
+.stkpi.human::before{background:var(--chart-human)}
+.stkpi.ai::before{background:var(--chart-2)}
+.stkpi.human b{color:var(--chart-human)}
+.stkpi.ai b{color:var(--chart-2)}
 .stkpi span{font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .stkpi b{font-size:22px;line-height:1.15;font-variant-numeric:tabular-nums;font-weight:700;letter-spacing:-.02em}
 .stkpi small{font-size:10.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -521,14 +529,14 @@ aside.rail::-webkit-scrollbar-thumb:hover{background:color-mix(in srgb,var(--acc
 .sthead{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px;font-size:12px}
 .sthead b{font-weight:600}
 .stlegend{display:flex;align-items:center;gap:8px;font-size:10px;color:var(--muted)}
-.stlegend i{width:7px;height:7px;border-radius:2px;display:inline-block;margin-right:3px;vertical-align:1px}
-.stlegend i.a{background:var(--accent)}
+.stlegend i{width:9px;height:9px;border-radius:3px;display:inline-block;margin-right:4px;vertical-align:-1px}
+.stlegend i.a{background:var(--chart-human)}
 .stlegend i.b{background:var(--chart-2)}
 .stchart{height:132px;display:flex;align-items:flex-end;gap:4px;padding-top:6px}
 .stcol{flex:1;min-width:0;height:100%;display:flex;flex-direction:column;gap:4px}
 .stbars{flex:1;display:flex;align-items:flex-end;justify-content:center;gap:2px;min-height:0}
-.stbars i{width:6px;border-radius:3px 3px 1px 1px;display:block;min-height:0}
-.stbars i.a{background:var(--accent)}
+.stbars i{width:7px;border-radius:4px 4px 1px 1px;display:block;min-height:0}
+.stbars i.a{background:var(--chart-human)}
 .stbars i.b{background:var(--chart-2)}
 .stcol>span{font-size:8.5px;color:var(--muted);text-align:center;white-space:nowrap;height:11px;overflow:hidden}
 .stempty{padding:16px 0;text-align:center;color:var(--muted);font-size:11.5px}
@@ -537,7 +545,7 @@ aside.rail::-webkit-scrollbar-thumb:hover{background:color-mix(in srgb,var(--acc
 .strow{display:grid;grid-template-columns:minmax(0,108px) 1fr 36px;align-items:center;gap:8px;font-size:11.5px}
 .strow .stname{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink)}
 .strow .sttrack{height:7px;border-radius:999px;background:var(--panel-2);overflow:hidden}
-.strow .sttrack i{display:block;height:100%;border-radius:inherit;background:var(--accent)}
+.strow .sttrack i{display:block;height:100%;border-radius:inherit;background:var(--chart-human)}
 .strow .sttrack i.b{background:var(--chart-2)}
 .strow b{text-align:right;font-weight:500;color:var(--muted);font-variant-numeric:tabular-nums;font-size:10.5px}
 .stlist{display:flex;flex-direction:column;gap:5px}
@@ -554,7 +562,7 @@ aside.rail::-webkit-scrollbar-thumb:hover{background:color-mix(in srgb,var(--acc
 .stv .nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink)}
 .stv.isadmin .nm{color:var(--accent);font-weight:600}
 .stv .sttrack{height:7px;border-radius:999px;background:var(--panel-2);overflow:hidden}
-.stv .sttrack i{display:block;height:100%;border-radius:inherit;background:var(--chart-2)}
+.stv .sttrack i{display:block;height:100%;border-radius:inherit;background:var(--chart-human)}
 .stv.isadmin .sttrack i{background:var(--accent)}
 .stv .mt{color:var(--muted);font-size:10px;white-space:nowrap;font-variant-numeric:tabular-nums}
 .catrow{
@@ -614,6 +622,11 @@ footer code{background:var(--panel-2);border:1px solid var(--line);border-radius
 .mhead .x{margin-left:auto;width:30px;height:30px;border-radius:7px;flex:none;border:1px solid var(--line-strong);display:grid;place-items:center}
 .mhead .x:hover{background:var(--accent-soft);border-color:var(--accent)}
 .mhead .x svg{width:14px;height:14px;display:block}
+.mngout{
+  flex:none;height:30px;padding:0 11px;border-radius:7px;border:1px solid var(--line-strong);
+  font-size:11.5px;color:var(--muted);background:var(--panel);
+}
+.mngout:hover{color:var(--accent);border-color:var(--accent);background:var(--accent-soft)}
 .mbody{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:0}
 .left{padding:20px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:14px}
 .stage{
@@ -993,6 +1006,7 @@ dl.meta dd{margin:0;word-break:break-word}
         <h2>流量与管理</h2>
         <div class="p" id="mngSub">—</div>
       </div>
+      <button class="mngout" id="mngLogout" title="退出管理员账号">退出登录</button>
       <button class="x" id="mngClose" title="关闭"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
     </div>
     <div class="mngtabs">
@@ -1022,7 +1036,7 @@ dl.meta dd{margin:0;word-break:break-word}
           <div class="stchart" id="stVisitChart"></div>
         </div>
         <div class="stpanel">
-          <div class="sthead"><b>近 14 天下载</b><span class="stlegend"><i class="a"></i>人类复制/下载<i class="b"></i>AI 取图</span></div>
+          <div class="sthead"><b>近 14 天下载 / 取图</b><span class="stlegend"><i class="a"></i>人类 · 复制 / 下载<i class="b"></i>AI · 接口取图</span></div>
           <div class="stchart" id="stDlChart"></div>
         </div>
       </div>
@@ -2637,17 +2651,17 @@ function renderStats(){
   const aiPct = totalDl ? Math.round((a.agent || 0) / totalDl * 100) : 0;
   const zeroRate = a.search ? Math.round((a.zero || 0) / a.search * 100) : 0;
   const cards = [
-    ["今日访客", stFmt(today.visitors || 0), `访问 ${stFmt(today.views || 0)} 次`],
-    ["近 14 天访客", stFmt(a.visitors || 0), `${stFmt(a.views || 0)} 次访问`],
-    ["今日 AI 取图", stFmt(today.agent || 0), `人类 ${stFmt(today.human || 0)} 次`],
-    ["近 14 天 AI 取图", stFmt(a.agent || 0), `占下载 ${aiPct}%`],
-    ["14 天人类使用", stFmt(a.human || 0), "复制 / 下载"],
-    ["14 天 AI 搜索", stFmt(a.search || 0), `零结果 ${stFmt(a.zero || 0)} · ${zeroRate}%`],
-    ["待审投稿", stFmt(a.pending || 0), "审核队列"],
-    ["今日 API 调用", stFmt(today.api || 0), `赞 ${stFmt(votes.up)} · 踩 ${stFmt(votes.down)}`],
+    ["今日访客", stFmt(today.visitors || 0), `访问 ${stFmt(today.views || 0)} 次`, ""],
+    ["近 14 天访客", stFmt(a.visitors || 0), `${stFmt(a.views || 0)} 次访问`, ""],
+    ["今日 AI 取图", stFmt(today.agent || 0), `人类 ${stFmt(today.human || 0)} 次`, "ai"],
+    ["近 14 天 AI 取图", stFmt(a.agent || 0), `占下载 ${aiPct}%`, "ai"],
+    ["14 天人类下载", stFmt(a.human || 0), "复制 / 下载", "human"],
+    ["14 天 AI 搜索", stFmt(a.search || 0), `零结果 ${stFmt(a.zero || 0)} · ${zeroRate}%`, "ai"],
+    ["待审投稿", stFmt(a.pending || 0), "审核队列", ""],
+    ["今日 API 调用", stFmt(today.api || 0), `赞 ${stFmt(votes.up)} · 踩 ${stFmt(votes.down)}`, ""],
   ];
-  kpis.innerHTML = cards.map(([label, value, sub]) =>
-    `<div class="stkpi"><span>${esc(label)}</span><b>${value}</b><small>${esc(sub)}</small></div>`
+  kpis.innerHTML = cards.map(([label, value, sub, tone]) =>
+    `<div class="stkpi ${tone}"><span>${esc(label)}</span><b>${value}</b><small>${esc(sub)}</small></div>`
   ).join("");
 
   stChart(document.getElementById("stVisitChart"), days, [
@@ -2714,6 +2728,10 @@ function renderStats(){
 
 document.getElementById("catMngBtn").addEventListener("click", () => openMng("cats"));
 document.getElementById("mngClose").addEventListener("click", () => document.getElementById("mngOverlay").classList.remove("on"));
+document.getElementById("mngLogout").addEventListener("click", async () => {
+  await logout();
+  document.getElementById("mngOverlay").classList.remove("on");
+});
 document.querySelectorAll(".mngtabs button").forEach(b => {
   b.addEventListener("click", () => {
     const t = b.dataset.t;
