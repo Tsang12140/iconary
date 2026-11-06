@@ -1824,7 +1824,7 @@ let activeInk = "#191813";   // 分部件模式下画笔蘸的颜色
 
 function curSvg(){
   /* 没动过颜色就吐回原始那串，一个字都不改 */
-  const painted = Object.keys(partInk).length > 0;
+  const painted = Object.keys(partInk).length > 0 || !!curColor;
   if (!liveSvg || !painted) {
     return curColor ? cur.svg.replace(/currentColor/g, curColor) : cur.svg;
   }
@@ -1873,7 +1873,8 @@ function collectParts(){
 }
 function paintParts(){
   parts.forEach((p, i) => {
-    const c = partInk[i];
+    /* 整枚色兜底：图标自带写死的 fill / stroke 也要跟着换，不能只靠继承的 color */
+    const c = partInk[i] || curColor;
     if (c) { p.el.setAttribute(p.mode, c); return; }
     ["stroke", "fill"].forEach(k => {
       if (p.orig[k] === null) p.el.removeAttribute(k);
@@ -1990,9 +1991,9 @@ document.getElementById("resetAll").addEventListener("click", () => {
   document.querySelectorAll("#inkseg button").forEach(x => x.classList.toggle("on", x.dataset.k === "all"));
   partMode = false;
   partInk = {};
+  curColor = null;
   paintParts();
   buildHit();
-  curColor = null;
   activeInk = "#191813";
   document.getElementById("mcolor").value = "#191813";
   document.getElementById("pvh").style.color = "";
@@ -2024,6 +2025,7 @@ function renderModalSwatches(){
       /* 画笔模式下只换笔尖颜色，不动已经涂好的东西 */
       if (partMode) { syncPreview(); return; }
       curColor = c;
+      paintParts();
       syncPreview();
       refreshCode();
     });
@@ -2032,7 +2034,7 @@ function renderModalSwatches(){
 }
 document.getElementById("inkReset").addEventListener("click", () => {
   if (partMode) { partInk = {}; paintParts(); }
-  else { curColor = null; }
+  else { curColor = null; paintParts(); }
   document.getElementById("pvh").style.color = "";
   syncPreview();
   refreshCode();
@@ -2042,6 +2044,7 @@ document.getElementById("mcolor").addEventListener("input", e => {
   document.querySelectorAll("#msw .sw").forEach(x => x.classList.remove("on"));
   if (partMode) { syncPreview(); return; }
   curColor = activeInk;
+  paintParts();
   syncPreview();
   refreshCode();
 });
